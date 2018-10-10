@@ -1,0 +1,115 @@
+# Site settings
+title: Dispwnl
+SEOTitle: A-Failure的博客 | Dispwnl
+header-img: img/009.jpg
+email: 2297349251@qq.com
+description: "一个天天被吊打小蒟蒻的blog"
+url: "https://a-failure.github.io/"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+catelog: true
+
+# SNS settings
+RSS: false
+github_username:    A-Failure
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+
+
+
+# Netease setttings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+
+
+
+# Sidebar settings
+sidebar: true                   # whether or not using Sidebar.
+sidebar-about-description: "弱的一匹"
+sidebar-avatar: /img/1.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+ 
+
+
+# Friends
+friends: [
+    {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "xMinh",
+        href: "https://xminh.github.io/"
+    },{
+        title: "Asia",
+        href: "http://www.cnblogs.com/victorique/"
+    },{
+        title: "fuge",
+        href: "https://www.cnblogs.com/beretty/"
+    },{
+        title: "zzzyc",
+        href: "https://www.luogu.org/blog/user52892/"
+    },{
+        title: "Cansult",
+        href: "https://www.cansult.ga/"
+    },{
+        title: "Captain_Paul",
+        href: "https://www.luogu.org/blog/Captain-Paul/"
+    },{
+        title: "AH",
+        href: "https://mhrlovezmy.coding.me/"
+    },{
+        title: "Small_Little_Rabbit",
+        href: "https://www.cnblogs.com/Slrslr/"
+    },{
+        title: "Refun",
+        href: "http://www.cnblogs.com/refun/"
+    },{
+        title: "Milky-Way",
+        href: "http://www.cnblogs.com/milky-w/"
+    },{
+        title: "The_Green_Sun-bGray",
+        href: "https://garystack.github.io/"
+    },{
+        title: "Wzhqwq",
+        href: "https://wzhqwq.coding.me/"
+    },{
+        title: "Ycrpro_dalao",
+        href: "http://ycrpro.com/"
+    }
+]
