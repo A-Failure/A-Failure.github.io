@@ -5,7 +5,7 @@ header-img: img/009.jpg
 email: 2297349251@qq.com
 description: "一个天天被吊打小蒟蒻的blog"
 url: "https://a-failure.github.io/"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/olda-failure"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 catelog: true
 
@@ -109,7 +109,7 @@ friends: [
         title: "Wzhqwq",
         href: "https://wzhqwq.coding.me/"
     },{
-        title: "Ycrpro_dalao",
+        title: "Ycr",
         href: "http://ycrpro.com/"
     }
 ]
