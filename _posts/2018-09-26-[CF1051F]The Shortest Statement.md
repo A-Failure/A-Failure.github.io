@@ -3,7 +3,7 @@ layout:     post
 title:      "[CF1051F]The Shortest Statement"
 date:       2018-09-26
 author:     "Dispwnl"
-header-img: "img/used/234.jpg"
+header-img: "img/used/243.jpg"
 catalog: false
 tags:
     - Dijkstra
