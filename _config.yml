@@ -5,7 +5,7 @@ header-img: img/009.jpg
 email: 2297349251@qq.com
 description: "一个天天被吊打小蒟蒻的blog"
 url: "https://a-failure.github.io/"              # your host, for absolute URL
-baseurl: "/olda-failure"                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 catelog: true
 
