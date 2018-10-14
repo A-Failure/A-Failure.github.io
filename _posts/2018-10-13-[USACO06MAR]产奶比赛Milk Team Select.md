@@ -47,3 +47,70 @@ MMM的举办目的之一，是通过竞赛中的合作来增进家庭成员之�
 并且这支队伍里有2对牛有血缘关系（1—2和1-3）．如果只选第2，3，5头奶牛，虽然总产奶量会更高（10加仑），但这支队伍里包含的血缘关系的对数比上一种组合少（队伍里没有血缘关系对）．
 
 ### 题解
+
+### 题解
+设$f_{0/1,x,i}$表示以$x$为根的子树里选中了$i$对相邻点，$0$表示没选$x$，$1$表示选了$x$
+
+然后树上背包即可
+
+### 代码
+```
+# include<iostream>
+# include<cstring>
+# include<cstdio>
+# include<algorithm>
+using namespace std;
+const int MAX=505;
+struct p{
+	int x,y;
+}c[MAX<<1];
+int n,X,num;
+int h[MAX],gl[MAX],siz[MAX];
+int f[2][MAX][MAX];
+int read()
+{
+	int x=0,fl=1;
+	char ch=getchar();
+	for(;!isdigit(ch);fl=(ch=='-')?-1:1,ch=getchar());
+	for(;isdigit(ch);x=x*10+ch-48,ch=getchar());
+	return x*fl;
+}
+void add(int x,int fa)
+{
+	c[++num]=(p){h[fa],x},h[fa]=num;
+}
+void dfs(int x=0)
+{
+	siz[x]=1;
+	for(int i=h[x];i;i=c[i].x)
+	  dfs(c[i].y),siz[x]+=siz[c[i].y];
+	for(int i=h[x];i;i=c[i].x)
+	  for(int j=siz[x]-1;j>=0;--j)
+	  	for(int k=0;k<=min(siz[c[i].y]-1,j);++k)
+	      {
+			f[0][x][j]=max(f[0][x][j],max(f[1][c[i].y][k],f[0][c[i].y][k])+f[0][x][j-k]);
+			if(x)
+			{
+				f[1][x][j]=max(f[1][x][j],f[0][c[i].y][k]+f[1][x][j-k]);
+			 	if(k!=j)  f[1][x][j]=max(f[1][x][j],f[1][c[i].y][k]+f[1][x][j-k-1]);
+			}
+		  }
+	for(int i=0;i<siz[x];++i)
+	  f[1][x][i]+=gl[x];
+}
+int main()
+{
+	n=read(),X=read();
+	for(int i=0;i<=n;++i)
+	  for(int j=0;j<=n;++j)
+	    f[0][i][j]=f[1][i][j]=-1e9;
+	for(int i=0;i<=n;++i)
+	  f[0][i][0]=f[1][i][0]=0;
+	for(int i=1;i<=n;++i)
+	  gl[i]=read(),add(i,read());
+	dfs();
+	for(int i=n-1;i>=0;--i)
+	  if(f[0][0][i]>=X) return printf("%d",i),0;
+	return printf("-1"),0;
+}
+```
