@@ -69,7 +69,7 @@ service-worker: true
 
 # Friends
 friends: [
-   # description: "同舍生"
+   # 同校
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
