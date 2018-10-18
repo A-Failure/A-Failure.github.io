@@ -69,7 +69,7 @@ service-worker: true
 
 # Friends
 friends: [
-   description: "同舍生"
+   # description: "同舍生"
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
@@ -116,7 +116,7 @@ friends: [
         title: "BigBother",
         href: "https://blog.csdn.net/A_Comme_Amour"
     },{
-        title: "Collation&Seek Group",
+        title: "A",
         href: "http://zwcblog.top./"
     }
 ]
