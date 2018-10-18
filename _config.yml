@@ -69,7 +69,6 @@ service-worker: true
 
 # Friends
 friends: [
-   # 同校
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
@@ -110,11 +109,11 @@ friends: [
         title: "Wzhqwq",
         href: "https://wzhqwq.coding.me/"
     },{
-        title: "Ycr",
-        href: "http://ycrpro.com/"
-    },{
         title: "BigBother",
         href: "https://blog.csdn.net/A_Comme_Amour"
+    },{
+        title: "Ycr",
+        href: "http://ycrpro.com/"
     },{
         title: "Collation&Seek Group",
         href: "http://zwcblog.top./"
