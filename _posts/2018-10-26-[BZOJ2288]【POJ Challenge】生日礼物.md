@@ -65,7 +65,7 @@ struct p{
 int n,m,ans;
 int read()
 {
-    int x(0),fl(1);
+    int x=0,fl=1;
     char ch=getchar();
     for(;!isdigit(ch);fl=(ch=='-')?-1:1,ch=getchar());
     for(;isdigit(ch);x=x*10+ch-48,ch=getchar());
