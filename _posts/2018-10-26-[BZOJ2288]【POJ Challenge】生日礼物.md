@@ -3,7 +3,7 @@ layout:         post
 title:          "[BZOJ2288]【POJ Challenge】生日礼物"
 date:           2018-10-26
 author:         "Dispwnl"
-header-img:     
+header-img:     "/img/used/4786.jpg"
 catalog:    true
 tags:
     - 线段树
