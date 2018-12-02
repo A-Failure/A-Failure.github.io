@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[USACO09MAR]地震损失2Earthquake Damage 2"
 date:       2017-12-21
@@ -74,7 +74,7 @@ Only pasture 2 being damaged gives such a scenario.
 
 未确定点入点出点之间连边为1，最小割集合中可以包含这个点
 
-然后就是慢慢建已知边啦
+然后就是慢慢建已知边了
 
 注意是双向边，还有1点也是确定点
 
