@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF1039B]Subway Pursuit"
 date:       2018-09-06
