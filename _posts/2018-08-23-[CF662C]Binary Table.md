@@ -1,4 +1,4 @@
-															---
+---
 layout:     post
 title:      "[CF662C]Binary Table"
 date:       2018-08-23
