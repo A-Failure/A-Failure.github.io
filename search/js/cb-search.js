@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿(document).ready(function () {
     var time1 = 0;
     var show = false;
     var names = new Array(); //文章名字等
