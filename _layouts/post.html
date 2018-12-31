@@ -272,43 +272,20 @@ layout: default
         })
         gitment.render('gitmentContainer')
       </script> -->
-	  <!--<div id="gitmentContainer"></div>
-	<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-	<script src="https://jjeejj.github.io/js/gitment.js"></script>
-	<script>
-	var gitment = new Gitment({
-    	id: '<%= page.title %>',
-	owner: 'A-Failure',
-    	repo: 'A-Failure.github.io',
-    	oauth: {
-        	client_id: 'cbb307ff7e24206d1f4e',
-        	client_secret: '391f931f64f9c8255dd1e887bedadbf1b5b0263b',
-    	},
-	});
-	gitment.render('gitmentContainer');
-	</script>
-  </div> -->
-  <h2 id="comments">Comments</h2>
-        {% include comments.html %}
-
-
-    </div>
-    <button class="anchor"><i class="fa fa-anchor"></i></button>
-    <div class="right">
-        <div class="wrap">
-
-            <!-- Content -->
-            <div class="side content">
-                <div>
-                    Content
-                </div>
-                <ul id="content-side" class="content-ul">
-                    {% if hasSimilar.size > 0 %}
-                    <li><a href="#similar_posts">Similar Posts</a></li>
-                    {% endif %}
-                    <li><a href="#comments">Comments</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+	  {% if site.comment_gitment_repo %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+		id: '<%= page.date %>',
+        owner: '{{site.github_username}}',
+        repo: '{{site.comment_gitment_repo}}',
+        oauth: {
+            client_id: '{{site.comment_gitment_clientId}}',
+            client_secret: '{{site.comment_gitment_clientSecret}}',
+        },
+    });
+    gitment.render('gitmentContainer')
+</script>
 <!--gitment 评论 end-->

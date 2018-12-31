@@ -14,6 +14,10 @@ RSS: false
 github_username:    A-Failure
 # linkedin_username:  firstname-lastname-idxxxx
 
+#gitment
+comment_gitment_repo: A-Failure.github.io
+comment_gitment_clientId: cbb307ff7e24206d1f4e
+comment_gitment_clientSecret: 391f931f64f9c8255dd1e887bedadbf1b5b0263b
 
 
 # Build settings
