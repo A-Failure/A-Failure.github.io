@@ -272,7 +272,7 @@ layout: default
         })
         gitment.render('gitmentContainer')
       </script> -->
-	  <div id="gitmentContainer"></div>
+	  <!--<div id="gitmentContainer"></div>
 	<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
 	<script src="https://jjeejj.github.io/js/gitment.js"></script>
 	<script>
@@ -287,5 +287,28 @@ layout: default
 	});
 	gitment.render('gitmentContainer');
 	</script>
-  </div>
+  </div> -->
+  <h2 id="comments">Comments</h2>
+        {% include comments.html %}
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    {% if hasSimilar.size > 0 %}
+                    <li><a href="#similar_posts">Similar Posts</a></li>
+                    {% endif %}
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 <!--gitment 评论 end-->
