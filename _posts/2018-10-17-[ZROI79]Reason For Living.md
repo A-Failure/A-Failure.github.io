@@ -6,8 +6,8 @@ author:         "Dispwnl"
 header-img:     "img/used/902.jpg"
 catalog:    true
 tags:
-    - 动态规划
-    - 启发式合并
+    - 二分答案
+    - 并查集
 ---
 ## [题目](http://www.zhengruioi.com/problem/79)
 ### 题目描述
