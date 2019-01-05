@@ -1,7 +1,7 @@
 # Site settings
 title: Dispwnl
 SEOTitle: A-Failure的博客 | Dispwnl
-header-img: img/009.jpg
+header-img: img/qaq/009.jpg
 email: 2297349251@qq.com
 description: "一个天天被吊打小蒟蒻的blog"
 url: "https://a-failure.github.io/"              # your host, for absolute URL
@@ -60,7 +60,7 @@ ga_domain: auto
 # Sidebar settings
 sidebar: true                   # whether or not using Sidebar.
 sidebar-about-description: "弱的一匹"
-sidebar-avatar: /img/1.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/qaq/1.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # Progressive Web Apps
