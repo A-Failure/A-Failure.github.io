@@ -61,7 +61,7 @@ There are other possible solutions.
 ```
 ### 题解
 可以yy一下，经过点与点之间连两条边，一条边长为2的次幂，一条边为0
-![](\img\gouzaoD1.png)
+![](/img/study/gouzaoD1.png)
 
 这个$n$肯定是2进制下$L$的最高位-1，这样的图可以构成$2^n$条路径，即路径长度$L$最高位的位置不为1的情况
 
@@ -70,16 +70,16 @@ There are other possible solutions.
 假设$L=43$，即$101011$
 
 那首先有这个图：
-![](\img\gouzaoD2.png)
+![](/imgstudy/gouzaoD2.png)
 
 剩下的部分也2进制处理，发现32和以后的数无法出现
 
 长度为32的边与长度为4的边相连的点相连，如图：
-![](\img\gouzaoD3.png)
+![](/img/study/gouzaoD3.png)
 这样最大能构成的数为39
 
 然后长度为40的边与长度为2的边相连的点相连，如图：
-![](\img\gouzaoD4.png)
+![](/img/study/gouzaoD4.png)
 这样最大能构成的数为43，满足题意的图就构造出来了
 
 所以每次选相加不超过$L$且结果最大的点相连，然后找构成上界继续
