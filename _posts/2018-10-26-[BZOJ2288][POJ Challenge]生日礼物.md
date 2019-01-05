@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "[BZOJ2288]【POJ Challenge】生日礼物"
+title:          "[BZOJ2288][POJ Challenge]生日礼物"
 date:           2018-10-26
 author:         "Dispwnl"
 header-img:     "img/used/4786.jpg"

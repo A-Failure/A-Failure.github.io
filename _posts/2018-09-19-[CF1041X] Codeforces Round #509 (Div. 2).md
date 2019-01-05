@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF1041X] Codeforces Round #509 (Div. 2)"
 date:       2018-09-19
