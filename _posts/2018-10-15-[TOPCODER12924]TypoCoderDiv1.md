@@ -83,7 +83,7 @@ $Aufun$决定去炸鱼，因为ta的确有伟大的神力，ta可以决定每一
 ### 题解
 >自闭一上午后下午接着自闭……
 
-![](/img/fish.gif)
+![](/img/qaq/fish.gif)
 $d_i$可能很大所以用<code>map</code>存
 
 分类讨论一下就行了
@@ -92,7 +92,7 @@ $d_i$可能很大所以用<code>map</code>存
 
 提交不上去又一个多小时……
 
-![](/img/346.jpg)
+![](/img/qaq/346.jpg)
 ### 代码
 ```
 # include<iostream>
