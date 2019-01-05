@@ -109,7 +109,7 @@ int main()
 
 #### 题解
 >$Google$翻译把$even$翻译成了“均匀的”
->![](https://a-failure.github.io/img/3423.jpg)
+>![](/img/qaq/3423.jpg)
 
 首先点数为奇数肯定不合法...
 
@@ -234,11 +234,11 @@ int main()
 > 原来用暴力PP然后成功被人$hack$了QAQ
 
 假设台球在$(2,3)$，$n=5,m=4$，方向向右上
-![](https://a-failure.github.io/img/study/billiard1.png)
+![](/img/study/billiard1.png)
 由于对称，可以化成这样
-![](https://a-failure.github.io/img/study/billiard2.png)
+![](/img/study/billiard2.png)
 延长一下
-![](https://a-failure.github.io/img/study/billiard3.png)
+![](/img/study/billiard3.png)
 所以题目要求$(y-x)+am=bn$，即$am+bn=(y-x)$
 
 其他方向也是一样，可以全部转换成右上的情况，最后答案再取反
@@ -298,7 +298,7 @@ int main()
 - 去掉一个环剩下的图中还有环
 
 对于一个环，如图：
-![](https://a-failure.github.io/img/study/tmpcbc1.png)
+![](/img/study/tmpcbc1.png)
 显然图中红色部分是必须要经过的
 
 所以先找图中的环，然后找入边和出边，把中间的点打上标记
