@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[BZOJ3309]DZY Loves Math"
 date:       2018-08-26
