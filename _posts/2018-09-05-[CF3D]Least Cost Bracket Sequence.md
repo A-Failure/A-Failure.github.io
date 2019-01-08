@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF3D]Least Cost Bracket Sequence"
 date:       2018-09-05
@@ -7,7 +7,7 @@ header-img: "img/used/35746.jpg"
 catalog: true
 tags:
     - 贪心
-    - 单调队列
+    - 堆
 ---
 ## [题目](http://codeforces.com/problemset/problem/3/D)
 ### 题意大意
@@ -30,7 +30,7 @@ tags:
 
 如果前缀和小于0，说明缺少<code>'('</code>，把前面的某个<code>'?'</code>变成<code>'('</code>即可
 
-选择<code>'?'</code>肯定不能乱选，根据贪心的思想，要选<code>')'</code>代价-<code>'('</code>代价最大的<code>'?'</code>，可以用单调队列维护，不匹配的情况就是需要<code>'?'</code>的时候队列为空或者到最后前缀和不为0
+选择<code>'?'</code>肯定不能乱选，根据贪心的思想，要选<code>')'</code>代价-<code>'('</code>代价最大的<code>'?'</code>，可以用一个堆维护，不匹配的情况就是需要<code>'?'</code>的时候堆为空或者到最后前缀和不为0
 
 ### 代码
 ```
