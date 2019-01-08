@@ -7,7 +7,6 @@ header-img: "img/used/35746.jpg"
 catalog: true
 tags:
     - 贪心
-    - 堆
 ---
 ## [题目](http://codeforces.com/problemset/problem/3/D)
 ### 题意大意
