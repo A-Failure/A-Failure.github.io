@@ -70,7 +70,7 @@ tags:
 自闭了告辞![](/img/qaq/346.jpg)
 
 ### 代码
-```
+```c++
 # include<bits/stdc++.h>
 # define tl (k<<1)
 # define tr (k<<1|1)
