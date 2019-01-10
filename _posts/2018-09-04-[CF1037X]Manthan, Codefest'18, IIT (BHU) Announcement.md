@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF1037X]Manthan, Codefest'18, IIT (BHU) Announcement"
 date:       2018-09-04
@@ -262,3 +262,5 @@ int main()
 	return 0;
 }
 ```
+### [H　　Security](https://codeforces.com/problemset/problem/1037/H)
+#### [题目大意+题解+代码](https://a-failure.github.io/2019/01/09/CF1037H-Security/)
