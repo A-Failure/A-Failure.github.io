@@ -7,7 +7,7 @@ header-img:	"img/used/432.jpg"
 catalog:	false
 tags:
 	- 后缀自动机
-		- 线段树
+	- 线段树
 ---
 
 ## [题目](http://codeforces.com/contest/666/problem/E)
