@@ -65,7 +65,7 @@ nyeeheeheee
 # define Y second
 # define mp make_pair
 using namespace std;
-const int MAX=1e6+5;
+const int MAX=1e5+5,N=1e6+5;
 struct p{
 	int l,r;
 	pair<int,int> x;
@@ -76,11 +76,11 @@ struct q{
 	const{
 		return _r<a._r;
 	}
-}qu[MAX];
+}qu[N];
 int n,m,tot,Q;
 int rt[MAX];
-char a[MAX],b[MAX];
-pair<int,int> ans[MAX];
+char a[MAX],b[N];
+pair<int,int> ans[N];
 void pus(int k) {s[k].x=max(s[tl].x,s[tr].x);}
 void change(int l,int r,int &k,int x)
 {
@@ -114,7 +114,7 @@ struct SAM{
 	}c[MAX];
 	int l,r,L,num;
 	int h[MAX],len[MAX],fa[MAX];
-	int son[MAX][26],f[21][MAX];
+	int son[MAX][26],f[19][MAX];
 	SAM() {l=r=1;}
 	void ins(int x,int id)
 	{
@@ -143,7 +143,7 @@ struct SAM{
 		for(int i=2;i<=l;++i)
 		  add(fa[i],i);
 		dfs();
-		for(int i=1;i<21;++i)
+		for(int i=1;i<19;++i)
 		  for(int j=1;j<=l;++j)
 		    f[i][j]=f[i-1][f[i-1][j]];
 	}
@@ -165,7 +165,7 @@ struct SAM{
 			if(_L>=qu[i]._r-qu[i]._l+1)
 			{
 				int L,_x=x;
-				for(L=20;L>=0;--L)
+				for(L=18;L>=0;--L)
 				  if(len[f[L][_x]]>=qu[i]._r-qu[i]._l+1) _x=f[L][_x];
 				ans[qu[i].id]=ask(1,m,rt[_x],qu[i].l,qu[i].r);
 			}
