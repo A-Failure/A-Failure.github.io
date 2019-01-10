@@ -53,7 +53,7 @@ nyeeheeheee
 
 然后$fuge$告诉我广义$SAM$不能用基数排序因为会合并不同串的信息balabala……
 
-![](\img\qaq\346.jpg)
+![](/img/qaq/346.jpg)
 
 ### 代码
 
