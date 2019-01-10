@@ -18,7 +18,7 @@ tags:
 
 ### Examples
 
-input
+#### input
 
 ```
 suffixtree
@@ -31,7 +31,7 @@ nyeeheeheee
 1 3 9 10
 ```
 
-output
+#### output
 
 ```
 1 1
