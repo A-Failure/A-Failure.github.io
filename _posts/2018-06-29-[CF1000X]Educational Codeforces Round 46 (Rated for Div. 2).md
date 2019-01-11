@@ -294,9 +294,9 @@ int main()
 
 因为现在的$i$是“上一个”的位置了，如果$pre_{a_i}$能给答案产生贡献应该在$i$前
 
-然后$i$位置存下$pre_{a_i}+1$和$a_i$
+然后$i$位置存下$pre_{a_i}+1$和$a_i​$
 
-如果$i$是某个询问的右端点，线段树查询区间$l$~$i$里有没有答案
+如果$i$是某个询问的右端点，线段树查询区间$[l,i]$里有没有答案
 
 #### 代码
 ```
@@ -308,12 +308,15 @@ int main()
 # define tl (k<<1)
 # define tr (k<<1|1)
 # define mid (l+r>>1)
+# define mp make_pair
+# define X first
+# define Y second
 # define P pair<int,int>
 using namespace std;
 const int MAX=5e5+1;
 int n,m;
 int ans[MAX],l[MAX],v[MAX],pr[MAX];
-P s[MAX<<2];
+pair<int,int> s[MAX<<2];
 vector<int> a[MAX];
 P Min(P a,P b)
 {
@@ -321,17 +324,10 @@ P Min(P a,P b)
 	if(!b.first) return a;
 	return min(a,b);
 }
-void pus(int k)
-{
-	s[k]=Min(s[tl],s[tr]);
-}
+void pus(int k) {s[k]=Min(s[tl],s[tr]);}
 void change(int l,int r,int k,int x,int a,int b)
 {
-	if(l==r)
-	{
-		s[k].first=a,s[k].second=b;
-		return;
-	}
+	if(l==r) return void(s[k]=mp(a,b));
 	if(x<=mid) change(l,mid,tl,x,a,b);
 	else change(mid+1,r,tr,x,a,b);
 	pus(k);
@@ -343,26 +339,30 @@ P ask(int l,int r,int k,int L,int R)
 	if(L>mid) return ask(mid+1,r,tr,L,R);
 	return Min(ask(l,mid,tl,L,mid),ask(mid+1,r,tr,mid+1,R));
 }
+int read()
+{
+	int x(0);
+	char ch=getchar();
+	for(;!isdigit(ch);ch=getchar());
+	for(;isdigit(ch);x=x*10+ch-48,ch=getchar());
+	return x;
+}
 int main()
 {
-	scanf("%d",&n);
+	n=read();
 	for(int i=1;i<=n;++i)
-	  scanf("%d",&v[i]);
-	scanf("%d",&m);
+	  v[i]=read();
+	m=read();
 	for(int i=1,r;i<=m;++i)
-	  {
-	  	scanf("%d%d",&l[i],&r);
-	  	a[r].push_back(i);
-	  }
+	  l[i]=read(),r=read(),a[r].push_back(i);
 	for(int i=1;i<=n;++i)
 	  {
 	  	if(pr[v[i]]) change(1,n,1,pr[v[i]],0,0);
-	  	change(1,n,1,i,pr[v[i]]+1,v[i]);
-	  	pr[v[i]]=i;
+	  	change(1,n,1,i,pr[v[i]]+1,v[i]),pr[v[i]]=i;
 	  	for(int j=0;j<a[i].size();++j)
 	  	  {
 	  	  	P Ans=ask(1,n,1,l[a[i][j]],i);
-	  	  	if(Ans.first<=l[a[i][j]]) ans[a[i][j]]=Ans.second;
+	  	  	if(Ans.X<=l[a[i][j]]) ans[a[i][j]]=Ans.Y;
 		  }
 	  }
 	for(int i=1;i<=m;++i)
