@@ -30,18 +30,18 @@ tags:
 
 用一个小于$2^n$的数来表示行是否翻转，0表示不翻转，1表示翻转
 
-对于一列$j$（也用一个小于$2^n$的数表示），ta经过$i$状态的行翻转之后的状态为$i$ xor $j$（对应部分为1就翻转，0就不翻转）
+对于一列$j$（也用一个小于$2^n$的数表示），ta经过$i$状态的行翻转之后的状态为$i$ xor $j$（对应部分为$1$就翻转，$0$就不翻转）
 
 用$a_i$表示列状态为$i$的总列数，$b_i$表示列状态为$i$这一列最少的1的个数（就是$min(num,n-num)）$，$ans_i$表示行翻转状态为$i$的时候矩阵最少的1的个数
 
 因为有<a href="http://www.codecogs.com/eqnedit.php?latex=\\\because&space;i&space;\oplus&space;j=k&space;\\\therefore&space;j&space;\oplus&space;k=i" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\\because&space;i&space;\oplus&space;j=k&space;\\\therefore&space;j&space;\oplus&space;k=i" title="\\\because i \oplus j=k \\\therefore j \oplus k=i" /></a>
 
-所以$ans_i=\sum_{j \oplus k=i}a_j*b_k$
+所以$ans_i=\sum_{j \oplus k=i}a_j*b_k​$
 
-用$FWT$优化一下就好了，复杂度$O(2^n*n)$
+用$FWT$优化一下就好了，复杂度$O(2^n\times n)$
 
 ### 代码
-```
+```c++
 # include<iostream>
 # include<cstring>
 # include<cstdio>
