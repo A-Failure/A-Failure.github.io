@@ -26,22 +26,23 @@ header-img: "img/qaq/3.jpg"
             <!-- 标签云 -->
 			<div id='tag_cloud' class="tags">
 				<p><strong>qwq</strong></p>
+
 				<a href="#日常" title="日常" rel="8">日常</a>
-				
-				<a href="#比赛" title="比赛" rel="11">比赛</a>
+	
+				<a href="#比赛" title="比赛" rel="12">比赛</a>
 				
 				<a href="#整理" title="整理" rel="16">整理</a>
 				
 				<a href="#补坑" title="补坑" rel="3">补坑</a>
 				
-				<a href="#瞎搞" title="瞎搞" rel="18">瞎搞</a>
+				<a href="#瞎搞" title="瞎搞" rel="17">瞎搞</a>
 				
 				<a href="#NOIP系列" title="NOIP系列" rel="7">NOIP系列</a>
 				
 				<p><strong>基础算法</strong></p>
 				<a href="#搜索" title="搜索" rel="5">搜索</a>
 				
-				<a href="#二分答案" title="二分答案" rel="6">二分答案</a>
+				<a href="#二分答案" title="二分答案" rel="9">二分答案</a>
 				
 				<a href="#高精度" title="高精度" rel="1">高精度</a>
 				
@@ -71,7 +72,7 @@ header-img: "img/qaq/3.jpg"
 				<a href="#矩阵乘法" title="矩阵乘法" rel="1">矩阵乘法</a>
 				
 				<p><strong>动态规划</strong></p>
-				<a href="#动态规划" title="动态规划" rel="23">动态规划</a>
+				<a href="#动态规划" title="动态规划" rel="25">动态规划</a>
 				
 				<a href="#记忆化搜索" title="记忆化搜索" rel="1">记忆化搜索</a>
 				
@@ -89,15 +90,15 @@ header-img: "img/qaq/3.jpg"
 				<a href="#2-SAT" title="2-SAT" rel="1">2-SAT</a>
 				
 				<p><strong>数据结构</strong></p>
-				<a href="#线段树" title="线段树" rel="14">线段树</a>
+				<a href="#线段树" title="线段树" rel="21">线段树</a>
 				
-				<a href="#树链剖分" title="树链剖分" rel="11">树链剖分</a>
+				<a href="#树链剖分" title="树链剖分" rel="12">树链剖分</a>
 				
 				<a href="#平衡树" title="平衡树" rel="3">平衡树</a>
 				
-				<a href="#Link Cut Tree" title="Link Cut Tree" rel="3">Link Cut Tree</a>
+				<a href="#Link Cut Tree" title="Link Cut Tree" rel="4">Link Cut Tree</a>
 				
-				<a href="#主席树" title="主席树" rel="1">主席树</a>
+				<a href="#主席树" title="主席树" rel="2">主席树</a>
 				
 				<a href="#单调队列" title="单调队列" rel="1">单调队列</a>
 				
@@ -111,7 +112,7 @@ header-img: "img/qaq/3.jpg"
 				
 				<a href="#克鲁斯卡尔重构树" title="克鲁斯卡尔重构树" rel="2">克鲁斯卡尔重构树</a>
 				
-				<a href="#并查集" title="并查集" rel="6">并查集</a>
+				<a href="#并查集" title="并查集" rel="7">并查集</a>
 				
 				<a href="#莫队" title="莫队" rel="2">莫队</a>
 				
@@ -120,7 +121,6 @@ header-img: "img/qaq/3.jpg"
 				<a href="#奇怪的数据结构" title="奇怪的数据结构" rel="1">奇怪的数据结构</a>
 				
 				<p><strong>字符串</strong></p>
-				<a href="#字符串" title="字符串" rel="3">字符串</a>
 				
 				<a href="#AC自动机" title="AC自动机" rel="1">AC自动机</a>
 				
@@ -128,7 +128,7 @@ header-img: "img/qaq/3.jpg"
 				
 				<a href="#后缀数组" title="后缀数组" rel="3">后缀数组</a>
 				
-				<a href="#后缀自动机" title="后缀自动机" rel="3">后缀自动机</a>
+				<a href="#后缀自动机" title="后缀自动机" rel="11">后缀自动机</a>
 				
 				<p><strong>多项式</strong></p>
 				<a href="#FFT" title="FFT" rel="2">FFT</a>
@@ -146,15 +146,15 @@ header-img: "img/qaq/3.jpg"
 				
 				<a href="#构造" title="构造" rel="1">构造</a>
 				
-				<a href="#启发式合并" title="启发式合并" rel="2">启发式合并</a>
+				<a href="#启发式合并" title="启发式合并" rel="1">启发式合并</a>
 			</div>
-
-            <!-- 标签列表 -->
+	
+	        <!-- 标签列表 -->
 			{% for tag in site.tags %}
 			<div class="one-tag-list">
 			  	<span class="fa fa-tag listing-seperator" id="{{ tag[0] }}">
-                    <span class="tag-text">{{ tag[0] }}</span>
-                </span>
+	                <span class="tag-text">{{ tag[0] }}</span>
+	            </span>
 				{% for post in tag[1] %}
 				  <!-- <li class="listing-item">
 				  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -163,7 +163,7 @@ header-img: "img/qaq/3.jpg"
 				 <div class="post-preview">
 				    <a href="{{ post.url | prepend: site.baseurl }}">
 				        <h2 class="post-title">
-                            {{ post.title }}
+	                        {{ post.title }}
 				        </h2>
 				        {% if post.subtitle %}
 				        <h3 class="post-subtitle">
@@ -177,7 +177,7 @@ header-img: "img/qaq/3.jpg"
 				{% endfor %}
 			</div>
 			{% endfor %}
-
+	
 		</div>
 	</div>
 </div>
