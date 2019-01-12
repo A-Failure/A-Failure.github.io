@@ -20,7 +20,7 @@ tags:
 
 ### Example
 #### input
-```
+```plain
 5 5
 1 2 3
 2 3 4
@@ -35,7 +35,7 @@ tags:
 3 1 5
 ```
 #### output
-```
+```plain
 1
 1
 2

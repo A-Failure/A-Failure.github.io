@@ -18,11 +18,11 @@ tags:
 - $L$ is an integer.
 
 ### Sample Input 1
-```
+```plain
 4
 ```
 ### Sample Output 1
-```
+```plain
 8 10
 1 2 0
 2 3 0
@@ -45,11 +45,11 @@ In the graph represented by the sample output, there are four paths from Vertex 
 There are other possible solutions.
 
 ### Sample Input 2
-```
+```plain
 5
 ```
 ### Sample Output 2
-```
+```plain
 5 7
 1 2 0
 2 3 1

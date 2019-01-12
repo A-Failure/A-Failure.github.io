@@ -18,7 +18,7 @@ tags:
 - 给定区间$[l,r]$，求$\sum_{i=l}^{r}\left\lfloor\frac{a_i}{b_i}\right\rfloor$
 
 ### Sample Input
-```
+```plain
 5 12
 1 5 2 4 3
 add 1 4
@@ -35,7 +35,7 @@ add 2 2
 query 1 5
 ```
 ### Sample Output
-```
+```plain
 1
 1
 2

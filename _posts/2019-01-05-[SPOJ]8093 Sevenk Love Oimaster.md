@@ -15,7 +15,7 @@ tags:
 给定$n$个模板串和$m$个查询串，输出每个查询串在多少个模板串中出现过
 
 ### Sample Input
-```
+```plain
 3 3
 abcabcabc
 aaa
@@ -25,7 +25,7 @@ a
 ca
 ```
 ### Sample Output
-```
+```plain
 1
 3
 1

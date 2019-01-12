@@ -18,7 +18,7 @@ tags:
 
 ### Examples
 #### input
-```
+```plain
 4 4 2
 0 1 0 1
 1 2
@@ -27,11 +27,11 @@ tags:
 4 1
 ```
 #### output
-```
+```plain
 50
 ```
 #### input
-```
+```plain
 4 5 3
 7 1 7 2
 1 2
@@ -41,7 +41,7 @@ tags:
 2 4
 ```
 #### output
-```
+```plain
 96
 ```
 ### 题解

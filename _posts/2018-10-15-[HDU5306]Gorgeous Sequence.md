@@ -18,7 +18,7 @@ tags:
 多组数据
 
 ### Sample Input
-```
+```plain
 1
 5 5
 1 2 3 4 5
@@ -29,7 +29,7 @@ tags:
 2 1 5
 ```
 ### Sample Output
-```
+```plain
 5
 15
 3

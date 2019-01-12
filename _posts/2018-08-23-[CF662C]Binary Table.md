@@ -14,14 +14,14 @@ tags:
 
 ### Example
 #### input
-```
+```plain
 3 4
 0110
 1010
 0111
 ```
 #### output
-```
+```plain
 2
 ```
 ### 题解

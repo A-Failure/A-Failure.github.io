@@ -49,14 +49,14 @@ HINT:ADD和QUERY操作的字符串都需要解压
 
 ### Output
 #### Sample Input
-```
+```plain
 2
 A
 QUERY B
 ADD BBABBBBAAB
 ```
 #### Sample Output
-```
+```plain
 0
 ```
 ### 题解

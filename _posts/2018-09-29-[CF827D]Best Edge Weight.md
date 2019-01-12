@@ -17,7 +17,7 @@ tags:
 
 ### Examples
 #### input
-```
+```plain
 4 4
 1 2 2
 2 3 2
@@ -25,18 +25,18 @@ tags:
 4 1 3
 ```
 #### output
-```
+```plain
 2 2 2 1 
 ```
 #### input
-```
+```plain
 4 3
 1 2 2
 2 3 2
 3 4 2
 ```
 #### output
-```
+```plain
 -1 -1 -1 
 ```
 ### 题解

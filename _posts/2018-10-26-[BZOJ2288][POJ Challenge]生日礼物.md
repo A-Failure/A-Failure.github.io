@@ -25,12 +25,12 @@ ftiasch 18岁生日的时候，lqp18_31给她看了一个神奇的序列 A1, A2,
 一个整数，最大的和。
 
 ### Sample Input
-```
+```plain
 5 2 
 2 -3 2 -1 2
 ```
 ### Sample Output
-```
+```plain
 5
 ```
 ### 题解

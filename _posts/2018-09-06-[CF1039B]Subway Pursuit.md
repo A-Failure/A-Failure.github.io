@@ -17,7 +17,7 @@ tags:
 
 ### Example
 #### input
-```
+```plain
 10 2
 Yes
 No
@@ -25,7 +25,7 @@ Yes
 Yes
 ```
 #### output
-```
+```plain
 3 5
 3 3
 3 4
