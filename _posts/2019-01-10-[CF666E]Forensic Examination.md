@@ -19,7 +19,7 @@ tags:
 
 #### input
 
-```
+```plain
 suffixtree
 3
 suffixtreesareawesome
@@ -32,7 +32,7 @@ nyeeheeheee
 
 #### output
 
-```
+```plain
 1 1
 3 4
 ```
