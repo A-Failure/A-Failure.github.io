@@ -1,17 +1,11 @@
 ---
 
 layout:		post
-
 title:		"[CF1100X]Codeforces Round #532 (Div. 2)"
-
 date:		2019-01-14
-
 author:		"Dispwnl"
-
 header-img:	"img/used/45697.jpg"
-
 catalog:	false
-
 tags:
     - 比赛
 ---

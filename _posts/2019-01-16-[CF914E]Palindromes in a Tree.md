@@ -2,7 +2,7 @@
 layout:		post
 title:		"[CF914E]Palindromes in a Tree"
 date:		2019-01-16
-author:		Dispwnl
+author:		"Dispwnl"
 header-img:	"img/used/4452.jpg"
 catalog:	false
 tags:
