@@ -5,7 +5,7 @@ date:		2019-02-21
 author:		"Dispwnl"
 header-img:	"img/used/00213.png"
 catalog:	false
-tags
+tags:
     - AC自动机
     - 二进制分组
 ---
