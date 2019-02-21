@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "[SPOJ]8093 Sevenk Love Oimaster"
+title:      "[SPOJ8093] Sevenk Love Oimaster"
 date:       2019-01-05
 author:     "Dispwnl"
 header-img: "img/used/7547.jpg"
@@ -33,12 +33,12 @@ ca
 ### 题解
 只想到了$SA$做法……
 
-先对于模板串拼成的大串建后缀数组，对于每个查询串，都可以二分找到$lcp$是ta自己的$rank$区间，然后问题就转换成了求一些区间里不同数（后缀在的串的标号）的个数，这样就是一个经典的离线树状数组/莫队的题了
+先对于模板串拼成的大串建后缀数组，对于每个查询串，都可以二分找到$lcp​$是ta自己的$rank​$区间，然后问题就转换成了求一些区间里不同数（后缀在的串的标号）的个数，这样就是一个经典的离线树状数组/莫队的题了
 
-$O(nlogn)$竟然跟$O(n\sqrt n)$跑的时间一样……
+$O(n\sqrt n)$竟然跟$O(nlogn)$跑的时间一样……
 
 ### 代码
-```
+```c++
 # include<iostream>
 # include<cstring>
 # include<cstdio>
@@ -161,7 +161,7 @@ $SAM$的做法其实也差不多
 子树对应着一段连续的$dfs$序，所以还是转换成了上面的问题
 
 ### 代码
-```
+```c++
 # include<iostream>
 # include<cstring>
 # include<cstdio>
