@@ -70,7 +70,7 @@ service-worker: true
 
 
 # Friends
-friends: [
+友链: [
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
