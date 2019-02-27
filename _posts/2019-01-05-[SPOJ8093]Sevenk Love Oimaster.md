@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "[SPOJ8093] Sevenk Love Oimaster"
+title:      "[SPOJ8093]Sevenk Love Oimaster"
 date:       2019-01-05
 author:     "Dispwnl"
 header-img: "img/used/7547.jpg"
