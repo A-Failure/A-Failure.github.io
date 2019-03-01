@@ -6,7 +6,7 @@ author:		"Dispwnl"
 header-img:	"img/used/23535.jpg"
 catalog:	false
 tags:
-    - FFT
+    - FFT/NTT
     - 并查集
 ---
 

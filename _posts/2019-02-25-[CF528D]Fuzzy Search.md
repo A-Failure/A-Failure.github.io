@@ -6,7 +6,7 @@ author:		"Dispwnl"
 header-img:	"img/used/79099.jpg"
 catalog:	false
 tags:
-    - FFT
+    - FFT/NTT
 ---
 
 ## [题目](http://codeforces.com/problemset/problem/528/D)
