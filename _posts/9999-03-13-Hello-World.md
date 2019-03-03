@@ -29,3 +29,5 @@ tags:
 小建议：如果您想要有更好的阅读体验，请不要全屏看文章，尽量保持半屏qwq~~啥你说半屏不能看见音乐？~~
 
 [搜索](https://github.com/androiddevelop/jekyll-search)在页面右下角，或者按两下<code>ctrl</code>即可弹出搜索页面
+
+~~不知道有没有人能发现Orz Aufun网页里的小彩蛋呢~~

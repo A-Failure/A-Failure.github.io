@@ -3,7 +3,7 @@ layout:		post
 title:		"[CF995F]Cowmpany Cowmpensation"
 date:		2019-02-28
 author:		"Dispwnl"
-header-img:	"img/used/"
+header-img:	"img/used/9081.jpg"
 catalog:	false
 tags:
     - 拉格朗日插值
