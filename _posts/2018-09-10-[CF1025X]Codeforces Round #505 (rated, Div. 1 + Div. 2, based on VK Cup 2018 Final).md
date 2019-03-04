@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF1025X]Codeforces Round #505 (rated, Div. 1 + Div. 2, based on VK Cup 2018 Final)"
 date:       2018-09-10
@@ -8,6 +8,7 @@ catalog: true
 tags:
     - 比赛
 ---
+
 ### [A　　Doggo Recoloring](http://codeforces.com/contest/1025/problem/A)
 #### 题目大意
 给定一个由小写字母组成的序列，每次可以把数量不小于$2$的字母变成其他任意字母，问是否可以将整个序列只包含一种字母

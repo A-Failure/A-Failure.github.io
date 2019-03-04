@@ -61,7 +61,6 @@ tags:
 <code>TTTTTLE</code>
 <code>TTTTLE</code>
 <code>TTTLE</code>
-<code>TTTLE</code>
 <code>TTLE</code>
 <code>TLE</code>
 

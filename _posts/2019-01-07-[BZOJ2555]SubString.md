@@ -65,7 +65,7 @@ ADD BBABBBBAAB
 有了加入操作后，后缀树不断变化，所以可以用$LCT$维护了
 
 ### 代码
-```
+```c++
 # include<iostream>
 # include<cstring>
 # include<cstdio>

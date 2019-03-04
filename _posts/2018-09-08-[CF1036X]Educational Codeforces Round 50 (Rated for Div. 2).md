@@ -1,4 +1,5 @@
-﻿---
+---
+
 layout:     post
 title:      "[CF1036X]Educational Codeforces Round 50 (Rated for Div. 2)"
 date:       2018-09-08

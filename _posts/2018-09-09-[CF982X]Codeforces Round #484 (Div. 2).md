@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[CF982X]Codeforces Round #484 (Div. 2)"
 date:       2018-09-09
@@ -8,6 +8,9 @@ catalog: true
 tags:
     - 比赛
 ---
+
+
+
 >掉的最惨的一场终于全A了QAQ
 
 ### [A　　Row](http://codeforces.com/contest/982/problem/A)
@@ -55,7 +58,7 @@ int main()
 给定入座人的顺序，问每个人坐在第几行
 
 #### 题解
-排下序，因为第一种人座位是递增的，所以拿个栈维护一下就好，因为数组开小WA了一发QAQ
+排下序，因为第一种人座位是递增的，所以拿个栈维护一下就好，因为数组开小<code>WA</code>了一发QAQ
 
 #### 代码
 ```
@@ -231,15 +234,15 @@ int main()
 问台球是否会停下来，如果会，输出进入的是哪个口袋
 
 #### 题解
-> 原来用暴力PP然后成功被人$hack$了QAQ
+> 原来用暴力<code>PP</code>然后成功被人$hack$了QAQ
 
-假设台球在$(2,3)$，$n=5,m=4$，方向向右上
+假设台球在$(2,3)​$，$n=5,m=4​$，方向向右上
 ![](/img/study/billiard1.png)
 由于对称，可以化成这样
 ![](/img/study/billiard2.png)
 延长一下
 ![](/img/study/billiard3.png)
-所以题目要求$(y-x)+am=bn$，即$am+bn=(y-x)$
+所以题目要求$(y-x)+am=bn​$，即$am+bn=(y-x)​$
 
 其他方向也是一样，可以全部转换成右上的情况，最后答案再取反
 

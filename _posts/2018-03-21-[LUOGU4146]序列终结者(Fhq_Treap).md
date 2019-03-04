@@ -1,4 +1,5 @@
-﻿---
+---
+
 layout:     post
 title:      "[LUOGU4146]序列终结者(Fhq_Treap)"
 date:       2018-03-21
@@ -77,7 +78,7 @@ $N\leq 50000,M\leq 100000$。
 
 woccccc $split$为什么从$l$开始分啊~~我明明是粘的板子~~
 
-改过了就A了T_T~~竟然跑的比$splay$慢~~
+改过了就<code>A</code>了T_T~~竟然跑的比$splay$慢~~
 
 ### 代码
 ```

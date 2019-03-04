@@ -18,7 +18,7 @@ tags:
 
 给定字符串$S,T(\vert S\vert\ge\vert T\vert)$，求$S$中每个$\vert T\vert $长度的子串和$T$的值是多少
 
-### ### Example
+### Example
 
 #### input
 

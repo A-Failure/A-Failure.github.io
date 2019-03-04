@@ -1,4 +1,5 @@
-﻿---
+---
+
 layout:     post
 title:      "[CF1C]Ancient Berland Circus"
 date:       2018-09-05
@@ -48,9 +49,9 @@ tags:
 
 >保证在最佳答案中多边形角的数目不大于100
 
-通过这个可以发现多边形圆心角不小于$0.01\times 2\pi\approx 0.06$，所以求$\gcd$过程中小于0.06的值都认成0就行了
+通过这个可以发现多边形圆心角不小于$0.01\times 2\pi\approx 0.06$，所以求$\gcd$过程中小于$0.06$的值都认成0就行了
 
-似乎出现本机WA 提交AC的情况？QAQ
+似乎出现本机<code>WA</code>提交<code>AC</code>的情况？QAQ
 
 ### 代码
 ```

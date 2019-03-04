@@ -1,4 +1,5 @@
-﻿---
+---
+
 layout:     post
 title:      "[CF1038X]Codeforces Round #508 (Div. 2)"
 date:       2018-09-07
