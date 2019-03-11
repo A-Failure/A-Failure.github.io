@@ -337,6 +337,66 @@ int main()
 }
 ```
 
+### [E　　Train Car Selection](https://codeforces.com/contest/1137/problem/E)
 
+#### 题目大意
 
- 
+给定一个序列，每个位置的值为$b+s(i-1)$初始值都是$0$，有$3$种操作：
+
+- 序列头加入$k$个位置，值都为$0$
+- 序列尾加入$k$个位置，值都为$0$
+- $b+x,s+y$
+
+每次操作完要求输出当前序列中的最小值和位置
+
+#### 题解
+
+> emmm我开始以为是个$Fhq\ Treap$然后我看到了数据范围$1e9$……
+>
+> 打扰了
+
+发现每一个加入的位置都可以看成一个点（因为加入的最左边点肯定最优）
+
+头上加的位置肯定比后面的优，所以把后面的都去掉
+
+这些位置可以看成一个一个的点，然后维护一个上凸壳就行了
+
+#### 代码
+
+```c++
+# include<iostream>
+# include<cstring>
+# include<cstdio>
+# include<algorithm>
+# define LL long long
+using namespace std;
+const int MAX=3e5+5;
+struct Point{
+	LL x,y;
+	Point(LL X=0,LL Y=0) {x=X,y=Y;}
+}_P[MAX];
+int m,Top;
+LL n,k,d;
+double K(Point a,Point b) {return double(a.y-b.y)/double(a.x-b.x);}
+int main()
+{
+	scanf("%I64d%d",&n,&m),Top=1;
+	for(int i=1,op,x,y;i<=m;++i)
+	  {
+	  	scanf("%d",&op);
+	  	if(op==1) scanf("%d",&x),Top=1,k=d=0,_P[1]=Point(0,0),n+=x;
+	  	else if(op==2)
+	  	{
+	  		scanf("%d",&x);
+			Point A=Point(n,-n*k-d);
+	  		while(Top>1&&K(_P[Top],A)<=K(_P[Top-1],_P[Top])) --Top;
+	  		_P[++Top]=A,n+=x;
+		}
+		else if(op==3) scanf("%d%d",&x,&y),d+=x,k+=y;
+		while(Top>1&&_P[Top].y+_P[Top].x*k>=_P[Top-1].y+_P[Top-1].x*k) --Top;
+		printf("%I64d %I64d\n",_P[Top].x+1,_P[Top].y+_P[Top].x*k+d);
+	  }
+	return 0;
+}
+```
+
