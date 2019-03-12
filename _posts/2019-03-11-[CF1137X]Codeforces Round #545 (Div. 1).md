@@ -400,3 +400,141 @@ int main()
 }
 ```
 
+### [F　　Matches Are Not a Child's Play](https://codeforces.com/contest/1137/problem/F)
+
+#### 题目大意
+
+给定一棵树，每个节点有一个权值，每次选择权值最小的叶子节点删除，直到所有节点都被删除
+
+现在有$3$种操作：
+
+- 修改$x$的权值为当前树中最大值$+1$
+- 查询$x$的被删除时间
+- 查询$x,y$谁先被删除
+
+#### 题解
+
+如果能解决操作$2$，操作$3$也就随之解决了
+
+先考虑如果操作$1$会产生什么影响：设前面最大值节点为$y$，则可能会改变删除时间的只有$x$到$y$这条链上的点，删除完其他点然后就从$y$一路删到$x$
+
+所以每次修改操作看成把$x$到$y$这条链染上一种新颜色，那么点$x'$的删除时间为所有颜色比它先染的点和颜色相同且要比它先删的点的个数
+
+如果把最大权值的点看成树根，这样就可以用$LCT$的<code>access</code>处理染色了
+
+用一个树状数组处理颜色个数前缀和，因为最大权值的点已经是根了，比$x$后删的点肯定是$x$的祖先，所以把$x$<code>splay</code>到根再删去左子树大小即可
+
+#### 代码
+
+```c++
+# include<iostream>
+# include<cstring>
+# include<cstdio>
+# include<algorithm>
+using namespace std;
+const int MAX=2e5+5;
+struct p{
+	int x,y;
+}c[MAX<<1];
+int n,m,COL,num;
+int s[MAX<<1],st[MAX],h[MAX];
+int lowbit(int x) {return x&(-x);}
+void change(int x,int d)
+{
+	for(int i=x;i<=n+m;i+=lowbit(i))
+	  s[i]+=d;
+}
+int ask(int x)
+{
+	int ans=0;
+	for(int i=x;i;i-=lowbit(i))
+	  ans+=s[i];
+	return ans;
+}
+struct Link_Cut_Tree{
+	int tag[MAX],fa[MAX],siz[MAX],col[MAX];
+	int son[MAX][2];
+	bool fl[MAX];
+	void pus(int x) {siz[x]=siz[son[x][0]]+siz[son[x][1]]+1;}
+	void down(int x)
+	{
+		if(fl[x])
+		{
+			if(son[x][0]) fl[son[x][0]]^=1;
+			if(son[x][1]) fl[son[x][1]]^=1;
+			swap(son[x][0],son[x][1]),fl[x]=0;
+		}
+		if(tag[x])
+		{
+			if(son[x][0]) col[son[x][0]]=tag[son[x][0]]=tag[x];
+			if(son[x][1]) col[son[x][1]]=tag[son[x][1]]=tag[x];
+			tag[x]=0;
+		}
+	}
+	bool is_root(int x) {return son[fa[x]][0]!=x&&son[fa[x]][1]!=x;}
+	bool GET_ID(int x) {return son[fa[x]][1]==x;}
+	void rot(int x)
+	{
+		int y=fa[x],z=fa[y],k=GET_ID(x);
+		if(!is_root(y)) son[z][GET_ID(y)]=x;
+		son[y][k]=son[x][k^1],fa[son[y][k]]=y,son[x][k^1]=y,fa[y]=x,fa[x]=z;
+		pus(y),pus(x);
+	}
+	void splay(int x)
+	{
+		int qwq=x,Top=0;
+		for(;!is_root(qwq);qwq=fa[qwq])
+		  st[++Top]=qwq;
+		if(qwq) down(qwq);
+		while(Top) down(st[Top--]);
+		for(int y;!is_root(x);rot(x))
+		  if(!is_root(y=fa[x])) rot(GET_ID(x)==GET_ID(y)?y:x);
+	}
+	void access(int x,int Col)
+	{
+		for(int y=0;x;y=x,x=fa[x])
+		  splay(x),change(col[x],-siz[x]+siz[son[x][1]]),change(col[x]=Col,siz[x]-siz[son[x][1]]),tag[x]=Col,son[x][1]=y,pus(x);
+	}
+	void make_root(int x) {access(x,COL),splay(x),fl[x]^=1,down(x),change(col[x],-1),son[x][1]=0,col[x]=tag[x]=++COL,siz[x]=1,change(col[x],1);}
+	void GET_TREE(int x=n,int F=0)
+	{
+		col[x]=x,siz[x]=1,fa[x]=F;
+		for(int i=h[x];i;i=c[i].x)
+		  if(c[i].y^F) GET_TREE(c[i].y,x),col[x]=max(col[x],col[c[i].y]);
+		for(int i=h[x];i;i=c[i].x)
+		  if(col[x]==col[c[i].y]) son[x][1]=c[i].y,siz[x]+=siz[c[i].y];
+		change(col[x],1);
+	}
+	int GET_TIME(int x) {return splay(x),ask(col[x])-siz[son[x][0]];}
+}Tree;
+char a[11];
+int read()
+{
+	int x(0);
+	char ch=getchar();
+	for(;!isdigit(ch);ch=getchar());
+	for(;isdigit(ch);x=x*10+ch-48,ch=getchar());
+	return x;
+}
+void add(int x,int y)
+{
+	c[++num]=(p){h[x],y},h[x]=num;
+	c[++num]=(p){h[y],x},h[y]=num;
+}
+int main()
+{
+	n=read(),m=read();
+	for(int i=1;i<n;++i)
+	  add(read(),read());
+	Tree.GET_TREE(),COL=n+1;
+	for(int i=1,x,y;i<=m;++i)
+	  {
+	  	scanf("%s",a),x=read();
+	  	if(a[0]=='u') Tree.make_root(x);
+	  	else if(a[0]=='w') printf("%d\n",Tree.GET_TIME(x));
+	  	else if(a[0]=='c') y=read(),Tree.GET_TIME(x)<Tree.GET_TIME(y)?printf("%d\n",x):printf("%d\n",y);
+	  }
+	return 0;
+}
+```
+
