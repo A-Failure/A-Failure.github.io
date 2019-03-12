@@ -56,10 +56,7 @@ int ask(int x)
 	  ans+=s[i];
 	return ans;
 }
-int ask(int l,int r)
-{
-	return ask(r)-ask(l-1);
-}
+int ask(int l,int r) {return ask(r)-ask(l-1);}
 int main()
 {
 	scanf("%d%d",&n,&m);
