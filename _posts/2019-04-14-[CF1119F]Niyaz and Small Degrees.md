@@ -3,7 +3,7 @@ layout:		post
 title:		"[CF1119F]Niyaz and Small Degrees"
 date:		2019-04-14
 author:		"Dispwnl"
-header-img:	"img/used/"
+header-img:	"img/used/77744.jpg"
 catalog:	false
 tags:
     - 平衡树

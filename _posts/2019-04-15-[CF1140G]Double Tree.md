@@ -3,7 +3,7 @@ layout:		post
 title:		"[CF1140G]Double Tree"
 date:		2019-04-15
 author:		"Dispwnl"
-header-img:	"img/used/"
+header-img:	"img/used/60223405.jpg"
 catalog:	false
 tags:
     - SPFA
@@ -22,7 +22,7 @@ tags:
 
 可以知道编号为偶数的点的导出子图和编号为奇数的点的导出子图都是一棵树，且它们同构。
 
-现在给出$Q$组询问，每组询问询问两个点$x,y​$之间的最短路长度。
+现在给出$Q​$组询问，每组询问询问两个点$x,y​$之间的最短路长度。
 
 ### Example
 
