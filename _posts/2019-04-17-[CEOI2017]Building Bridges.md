@@ -3,7 +3,7 @@ layout:		post
 title:		"[CEOI2017]Building Bridges"
 date:		2019-04-17
 author:		"Dispwnl"
-header-img:	"img/used"
+header-img:	"img/used/39475894.jpg"
 catalog:	false
 tags:
     - 斜率优化
