@@ -27,11 +27,11 @@ $t(1)s(n)=\sum_{i=1}^{n}(F*\mu*t)(i)-\sum_{i=2}^{n}t(i)s(\left\lfloor\frac{n}{i}
 
 有$\mu​$，考虑$t=1​$，这样式子就成了$s(n)=\sum_{i=1}^{n}F(i)-\sum_{i=2}^{n}s(\left\lfloor\frac{n}{i}\right\rfloor)​$
 
-再考虑如何求$\sum_{i=1}^{n}F(i)$，尝试用min_25筛筛一下前缀和
+再考虑如何求$\sum_{i=1}^{n}F(i)​$，尝试用min_25筛筛一下前缀和
 
 设$S(n,j)​$为上一个质因子选$P_{j-1}​$且剩下的数的积不超过$n​$的答案，有式子
 
-$S(n,j)={P_{j-1}}^k\sum_{i=P_{j-1}+1}^{n}[i\in P]+\sum_{i=1}^{{P_i^2}\le n}\sum_{c=1}^{P_i^{c+1}\le n}S(\left\lfloor\frac{n}{P_i^c}\right\rfloor)+{P_i}^k$
+$S(n,j)={P_{j-1}}^k\sum_{i=P_{j-1}+1}^{n}[i\in P]+\sum_{i=1}^{ {P_i} ^ 2\le n}\sum_{c=1}^{ {P_i} ^ {c+1} \le n}S(\left\lfloor\frac{n}{ {P_i} ^ c}\right\rfloor)+{P_i}^k$
 
 这样就可以搞了
 
