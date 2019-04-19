@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "[NOI.AC43]ladder"
+title:      "[NOIAC43]ladder"
 date:       2018-10-28
 author:     "Dispwnl"
 header-img:	"img/used/4532.jpg"
