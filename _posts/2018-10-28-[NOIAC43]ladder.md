@@ -61,7 +61,7 @@ tags:
 因为每个梯子是不同的，最后答案要$\times 4$
 
 ### 代码
-```
+```c++
 # include<iostream>
 # include<cstring>
 # include<cstdio>
