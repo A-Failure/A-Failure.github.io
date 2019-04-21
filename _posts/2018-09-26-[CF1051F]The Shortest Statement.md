@@ -6,7 +6,7 @@ author:     "Dispwnl"
 header-img: "img/used/243.jpg"
 catalog: false
 tags:
-    - Dijkstra
+    - 最短路
     - 倍增
 ---
 ## [题目](http://codeforces.com/problemset/problem/1051/F)
@@ -91,7 +91,7 @@ $m$与$n$差不多大小啊……树？
 写堆优化的时候爆<code>int</code>了QAQ
 
 ### 代码
-```
+```c++
 # include<bits/stdc++.h>
 # define LL long long
 using namespace std;

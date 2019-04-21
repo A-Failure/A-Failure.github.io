@@ -6,7 +6,7 @@ author:		"Dispwnl"
 header-img:	"img/used/60223405.jpg"
 catalog:	false
 tags:
-    - SPFA
+    - 最短路
     - 倍增
 ---
 
