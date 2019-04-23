@@ -3,7 +3,7 @@ layout:		post
 title:		"[CF1151F]Sonya and Informatics"
 date:		2019-04-22
 author:		"Dispwnl"
-header-img:	"img/used"
+header-img:	"img/used/230120.jpg"
 catalog:	false
 tags:
     - 动态规划
