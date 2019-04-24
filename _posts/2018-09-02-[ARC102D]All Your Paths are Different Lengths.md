@@ -36,14 +36,6 @@ tags:
 7 8 1
 ```
 
-In the graph represented by the sample output, there are four paths from Vertex $1$ to $N=8$:
-
-- $1 → 2 → 3 → 4 → 8$ with length $0$
-- $1 → 2 → 3 → 7 → 8$ with length $1$
-- $1 → 2 → 6 → 7 → 8$ with length $2$
-- $1 → 5 → 6 → 7 → 8$ with length $3$
-There are other possible solutions.
-
 ### Sample Input 2
 ```plain
 5

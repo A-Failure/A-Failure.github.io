@@ -8,6 +8,7 @@ catalog:	false
 tags:
     - 动态规划
     - 矩阵乘法
+    - 概率与期望
 ---
 
 ## [题目](<https://www.luogu.org/problemnew/show/CF1151F>)
