@@ -16,7 +16,7 @@
       display: flex;
     }
 
-    #start {
+    .btn-lg {
       width: 500px;
       border-radius: 10px;
       cursor: pointer;
@@ -24,7 +24,7 @@
       transition: all .3s;
       overflow: hidden;
     }
-    #start.loading {
+    .btn-lg.loading {
       cursor: progress;
       background-color: rgb(210, 252, 212) !important;
       box-shadow: none !important;
@@ -45,7 +45,7 @@
       transition: all .5s ease-out;
     }
 
-    #start:hover {
+    .btn-lg:hover {
       background-color: rgb(3, 150, 248);
       box-shadow: 0 0 20px 0px rgba(3, 150, 248, 0.5);
       color: #fff;
@@ -56,7 +56,7 @@
     }
 
     #tip {
-      width: 500px;
+      width: 380px;
       margin-top: 20px;
       border-radius: 10px;
       height: 32px;
@@ -109,7 +109,7 @@
     #hide {
       flex-direction: column;
       align-items: center;
-      display: none;
+      display: flex;
     }
 
     #orz_title {
@@ -177,8 +177,6 @@
     }
 
     #orz_btn {
-      width: 100%;
-      height: 50px;
       cursor: pointer;
       font-size: 30px;
       line-height: 50px;
@@ -189,7 +187,9 @@
     }
 
     #orz_btn:hover {
-      background-color: rgb(255, 148, 148);
+      background-color: rgb(255, 61, 61);
+      color: white;
+      box-shadow: 0 0 20px 0 rgba(255, 67, 67, 0.466);
     }
 
     .orz_succ {
@@ -236,7 +236,7 @@
       bottom: 10px;
       right: 10px;
       border-radius: 20px;
-      box-shadow: 0px 0px 3px black;
+      box-shadow: 0px 0px 3px #0006;
       transition-property: background-color, height;
       transition-duration: .3s;
       transition-timing-function: ease-out;
@@ -287,7 +287,7 @@
     }
 
     @media screen and (max-width: 700px) {
-      #start {
+      .btn-lg {
         width: 380px;
       }
       #loading_note {
@@ -320,12 +320,16 @@
     }
 
     @media screen and (max-width: 400px) {
-      #start {
+      .btn-lg {
         width: 260px;
       }
       #loading_note {
         font-size: 16px;
         line-height: 40px;
+      }
+      #tip {
+        width: 300px;
+        height: 54px;
       }
       #orz_title {
         height: 60px;
@@ -365,6 +369,7 @@
         $("hide").style.display = "flex";
         document.title = "Aufun太神辣! | Dispwnl";
         $("start").onclick = null;
+        load_3();
       }
       $("crowds").onclick = function() {
         orz_cnt++;
@@ -407,7 +412,7 @@
           alert(sayings[Math.floor(Math.random()*sayings.length)]);
         say_cnt++;
       }
-      function maker_switch() {
+      $("makers").onclick = function() {
         var maker = $("makers");
         if (maker.className == '')
           maker.className = 'maker_open';
@@ -465,14 +470,14 @@
 <body>
   <iframe id="aufun_music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110></iframe>
   <div class="center">
-    <div id="start">
+    <div id="start" class="btn-lg">
       <div id="loading_note">我想膜Aufun！</div>
       <div id="loading_bar"></div>
     </div>
     <div id="tip">
       <div id="tip1" class="tip-show">请务必在闲暇时间食用</div>
       <div id="tip2">初次从GitHub上加载图片需要一段时间qwq</div>
-      <div id="tip3">
+      <div id="tip3" style="transform-origin: 50% 16px;">
         <span id="busuanzi_container_page_pv">你是第<span id="busuanzi_value_page_pv"></span>个朝圣者！快膜Aufun来获得Au爷无穷RP的力量吧！</span>
       </div>
     </div>
@@ -494,7 +499,7 @@
       <div id="crowds_r"></div>
     </div>
     <p id="orz_content">Aufun是我们的红太阳，没有他我们会死！</p>
-    <div id="orz_btn">点击膜拜</div>
+    <div id="orz_btn" class="btn-lg">点击膜拜</div>
     <div id="aufun_margin">
       <div id="aufun"></div>
     </div>
@@ -502,7 +507,7 @@
 
   <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  <div id="makers" title="制作者们" onclick="maker_switch()">
+  <div id="makers" title="制作者们">
     <div id="powered_by_wrap">
       <div id="arrow">
         <svg width="32" height="32" version="1.1">
