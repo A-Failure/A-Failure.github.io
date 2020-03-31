@@ -115,22 +115,19 @@
     #orz_title {
       font-size: 0;
       height: 180px;
-      transition: height 0.5s;
+      display: flex;
+      align-items: center;
       user-select: none;
     }
 
-    #orz_title span {
+    #orz_title > div {
       font-size: 128px;
       line-height: 180px;
       transition: font-size 0.1s;
     }
 
-    #orz_title span:hover {
+    #orz_title > div:hover {
       font-size: 180px;
-    }
-
-    .title_hide {
-      font-size: 0;
     }
 
     #aufun_icon {
@@ -485,12 +482,12 @@
 
   <div id="hide">
     <p id="orz_title">
-      <span id="t_1" class="title_hide" style="color: rgb(66,133,244)">O</span>
-      <span id="t_2" class="title_hide" style="color: rgb(234,67,53)">r</span>
-      <span id="t_3" class="title_hide" style="color: rgb(251,188,5)">z</span>
-      <span id="t_4" class="title_hide" style="color: rgb(66,133,244)">A</span>
-      <span id="t_5" class="title_hide" style="color: rgb(52,168,83)">u</span>
-      <span id="t_6" class="title_hide" style="color: rgb(234,67,53)">fun</span>
+      <div style="color: rgb(66,133,244)">O</div>
+      <div style="color: rgb(234,67,53)">r</div>
+      <div style="color: rgb(251,188,5)">z</div>
+      <div style="color: rgb(66,133,244)">A</div>
+      <div style="color: rgb(52,168,83)">u</div>
+      <div style="color: rgb(234,67,53)">fun</div>
     </p>
 
     <div id="aufun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
