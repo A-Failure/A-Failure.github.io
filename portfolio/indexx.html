@@ -21,7 +21,8 @@
       border-radius: 10px;
       cursor: pointer;
       background-color: rgb(231, 231, 231);
-      transition: all .3s;
+      transition-property: background-color, color, box-shadow;
+      transition-duration: .3s;
       overflow: hidden;
     }
     .btn-lg.loading {
@@ -41,8 +42,8 @@
     #loading_bar {
       height: 50px;
       width: 0%;
-      background-color: rgb(165, 255, 168);
-      transition: all .5s ease-out;
+      background-color: rgb(98, 249, 144);
+      transition: width .5s ease-out;
     }
 
     .btn-lg:hover {
@@ -109,14 +110,13 @@
     #hide {
       flex-direction: column;
       align-items: center;
-      display: flex;
+      display: none;
     }
 
     #orz_title {
       font-size: 0;
       height: 180px;
       display: flex;
-      align-items: center;
       user-select: none;
     }
 
@@ -135,10 +135,9 @@
       background-size: 100%;
       width: 180px;
       height: 180px;
-      border-radius: 30px;
+      border-radius: 50%;
       box-shadow: 0 0 100px red;
-      transition-property: box-shadow, height, width;
-      transition-duration: 0.5s;
+      transition: box-shadow 0.5s;
       cursor: pointer;
     }
 
@@ -149,13 +148,14 @@
     #crowds {
       width: 100%;
       cursor: -webkit-zoom-in;
+      margin-top: -20px;
     }
 
-    #crowds_l,
-    #crowds_r {
+    #crowds > div {
       height: 45px;
-      width: 50%;
+      width: 45%;
       z-index: 0;
+      background-size: contain;
     }
 
     #crowds_l {
@@ -170,7 +170,6 @@
     #orz_content {
       color: red;
       font-size: 56px;
-      transition: font-size 0.5s;
     }
 
     #orz_btn {
@@ -179,8 +178,7 @@
       line-height: 50px;
       color: red;
       background-color: rgb(235, 189, 189);
-      transition-property: background-color height;
-      transition-duration: 0.5s;
+      margin-bottom: 20px;
     }
 
     #orz_btn:hover {
@@ -192,8 +190,11 @@
     .orz_succ {
       background-color: rgb(0, 172, 23) !important;
       color: #fff !important;
-      height: 100px !important;
       cursor: auto !important;
+      border-radius: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
     }
 
     .orz_succ p {
@@ -207,9 +208,8 @@
       opacity: 0;
       height: 0;
       width: 100%;
-      transition-property: height, opacity;
-      transition-duration: 2s;
-      transition-delay: 1s;
+      transition: height 1s, opacity 1s;
+      transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
 
     .aufun {
@@ -219,11 +219,9 @@
     }
 
     #aufun_margin {
-      height: calc(100vh - 100px);
+      height: 100vh;
       width: 100%;
       display: none;
-      align-items: center;
-      flex-direction: column;
     }
 
     #makers {
@@ -265,7 +263,7 @@
       margin: 4px;
       width: 32px;
       height: 32px;
-      transition: transform 0.5s;
+      transition: transform .3s;
       transform: scale(.6) rotate(90deg);
     }
 
@@ -297,18 +295,21 @@
         font-size: 12px;
       }
 
-      #orz_title span {
+      #orz_title > div {
         font-size: 80px;
         line-height: 95px;
       }
 
-      #orz_title span:hover {
+      #orz_title > div:hover {
         font-size: 95px;
       }
 
       #aufun_icon {
         width: 140px;
         height: 140px;
+      }
+      #crowds > div {
+        height: 35px;
       }
 
       #orz_content {
@@ -332,18 +333,24 @@
         height: 60px;
       }
 
-      #orz_title span {
+      #orz_title > div {
         font-size: 50px;
         line-height: 60px;
       }
 
-      #orz_title span:hover {
+      #orz_title > div:hover {
         font-size: 60px;
       }
 
       #aufun_icon {
         width: 100px;
         height: 100px;
+      }
+      #crowds {
+        margin-top: -5px;
+      }
+      #crowds > div {
+        height: 25px;
       }
 
       #orz {
@@ -366,7 +373,6 @@
         $("hide").style.display = "flex";
         document.title = "Aufun太神辣! | Dispwnl";
         $("start").onclick = null;
-        load_3();
       }
       $("crowds").onclick = function() {
         orz_cnt++;
@@ -386,16 +392,14 @@
         document.title = "人赢Aufun!! | Dispwnl";
         var el = $("orz_btn");
         var el2 = $("aufun_margin");
-        el2.style.display = "flex";
+        el2.style.display = "block";
         el.className = "orz_succ";
         el.innerHTML = "膜拜成功!<br>Aufun又变强了!";
-        $("aufun").className = "aufun";
-        el.scrollIntoView();
+        el2.scrollIntoView();
         setTimeout(() => {
+          $("aufun").className = "aufun";
           el.style.display = "none";
-          el2.style.height = "100vh";
-          el2.scrollIntoView()
-        }, 2000);
+        }, 800);
       }
       var sayings = ["Aufun: 辣鸡。", "Aufun: 我AK了IOI，你们行吗\n\n\n啧啧啧", "Aufun: 我妹子成群", "Aufun: 我为了让你膜连妹子都不泡了", "Aufun: 你看我成人赢了",
         "Aufun: 这种垃圾博客还敢膜我", "Aufun: 你蛇皮吧。。\n你有毒吧\n。。。", "我搞OI入门即巅峰了解一下",
@@ -426,7 +430,7 @@
         }, 1000);
         note_el.innerHTML = "正在联系Aufun...";
         $("start").onclick = null;
-        $("start").className = 'loading';
+        $("start").className = 'btn-lg loading';
         var img = new Image();
         img.onload = load_1;
         img.src = "https://a-failure.github.io/portfolio/aufun_top.png";
@@ -449,13 +453,11 @@
         bar_el.style.width = '100%';
         clearTimeout(timer);
         $("aufun_icon").style.backgroundImage = "url('https://a-failure.github.io/portfolio/aufun_top.png')";
-        $("crowds_l").style.backgroundImage = "url('https://a-failure.github.io/portfolio/Orz.gif')";
-        $("crowds_r").style.backgroundImage = "url('https://a-failure.github.io/portfolio/Orz.gif')";
-        $("aufun").style.backgroundImage = "url('333.jpg')"
+        $("crowds_l").style.backgroundImage = $("crowds_r").style.backgroundImage = "url('https://a-failure.github.io/portfolio/Orz.gif')";
+        $("aufun").style.backgroundImage = "url('https://a-failure.github.io/portfolio/333.jpg')"
         note_el.innerHTML = "点击免费膜Aufun";
-        bar_el.style.width = '100%';
         $("start").onclick = start;
-        $("start").className = 'loaded';
+        $("start").className = 'btn-lg loaded';
         $('tip1').className = $('tip2').className = '';
         $('tip3').className = 'tip-show';
         $("aufun_music").src = 'https://music.163.com/outchain/player?type=0&id=2275415823&auto=1&height=90'
@@ -481,14 +483,14 @@
   </div>
 
   <div id="hide">
-    <p id="orz_title">
+    <div id="orz_title">
       <div style="color: rgb(66,133,244)">O</div>
       <div style="color: rgb(234,67,53)">r</div>
       <div style="color: rgb(251,188,5)">z</div>
       <div style="color: rgb(66,133,244)">A</div>
       <div style="color: rgb(52,168,83)">u</div>
       <div style="color: rgb(234,67,53)">fun</div>
-    </p>
+    </div>
 
     <div id="aufun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
     <div id="crowds">
