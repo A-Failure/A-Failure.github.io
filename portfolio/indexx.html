@@ -1,371 +1,525 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-			body {
-				text-align: center;
-				margin: 0;
-				min-width: 320px;
-			}
-			#start {
-				width: 100%;
-				height: 50px;
-				cursor: pointer;
-				background-color: rgb(204, 204, 204);
-				transition: background-color 0.5s;
-			}
-			#loading_note {
-				font-size: 30px;
-				line-height: 50px;
-				width: 100%;
-				margin-bottom: -50px;
-			}
-			#loading_bar {
-				height: 50px;
-				width: 0;
-				background-color: rgb(165, 255, 168);
-				transition: width 0.5s ease-out;
-				border-top-right-radius: 5px;
-				border-bottom-right-radius: 5px;
-			}
-			#start:hover {
-				background-color: rgb(172, 172, 172);
-			}
-			#hide {
-				flex-direction: column;
-				align-items: center;
-			}
-			#orz_title, #aufun_icon, #too_strong, #orz_content, #aufun {
-				display: flex;
-			}
-			#orz_title {
-				font-size: 0;
-				height: 180px;
-				transition: height 0.5s;
-			}
-			#orz_title span {
-				font-size: 128px;
-				line-height: 180px;
-				transition: font-size 0.1s;
-			}
-			#orz_title span:hover {
-				font-size: 180px;
-			}
-			.title_hide {
-				font-size: 0;
-			}
-			#aufun_icon {
-				z-index: 100;
-				background-size: 100%;
-				width: 180px;
-				height: 180px;
-				border-radius: 30px;
-				box-shadow: 0 0 100px red;
-				transition-property: box-shadow, height, width;
-				transition-duration: 0.5s;
-				cursor: pointer;
-			}
-			#aufun_icon:hover {
-				box-shadow: 0 0 200px 100px #f44;
-			}
-			#too_strong {
-				width: 100%;
-				cursor: -webkit-zoom-in;
-			}
-			#too_1, #too_2 {
-				height: 45px;
-				width: 50%;
-			}
-			#too_1 {
-				z-index: 0;
-				transform: scaleX(-1);
-				float: left;
-			}
-			#too_2 {
-				z-index: 0;
-				float: right;
-			}
-			#orz_content {
-				color: red;
-				font-size: 56px;
-				transition: font-size 0.5s;
-			}
-			#orz_btn {
-				width: 100%;
-				height: 50px;
-				cursor: pointer;
-				font-size: 30px;
-				line-height: 50px;
-				color: red;
-				background-color: rgb(235, 189, 189);
-				transition-property: background-color height;
-				transition-duration: 0.5s;
-			}
-			#orz_btn:hover {
-				background-color: rgb(255, 148, 148);
-			}
-			.orz_succ {
-				background-color: rgb(0, 172, 23) !important;
-				color: #fff !important;
-				height: 100px !important;
-				cursor: auto !important;
-			}
-			.orz_succ p {
-				line-height: 30px;
-			}
-			#aufun {
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: top;
-				opacity: 0;
-				height: 0;
-				width: 100%;
-				transition-property: height, opacity;
-				transition-duration: 2s;
-				transition-delay: 1s;
-			}
-			.aufun {
-				height: 100% !important;
-				opacity: 1 !important;
-				cursor: pointer;
-			}
-			#aufun_margin {
-				height: calc(100vh - 100px);
-				width: 100%;
-				display: none;
-				align-items: center;
-				flex-direction: column;
-			}
-			#footer {
-				width: 100%;
-				background-color: rgb(233, 233, 233);
-				padding: 5px 0;
-			}
-			#makers {
-				position: fixed;
-				width: 140px;
-				bottom: 0;
-				right: 0;
-				border-top-left-radius: 5px;
-				border-bottom-left-radius: 5px;
-				height: 40px;
-				box-shadow: 0px 0px 3px black;
-				transition: background-color 0.5s, height 0.5s;
-				background-color: white;
-			}
-			#makers:hover {
-				background-color: #DDD;
-			}
-			.maker_open {
-				height: 160px !important;
-			}
-			.maker_open #arrow {
-				transform: rotate(270deg);
-			}
-			#arrow, #power_by {
-				text-align: left;
-				float: left;
-			}
-			#arrow {
-				margin: 4px;
-				width: 32px;
-				height: 32px;
-				transition: transform 0.5s;
-				transform: rotate(90deg);
-			}
-			#power_by, #maker_0, #maker_1, #maker_2 {
-				height: 40px;
-				line-height: 40px;
-				cursor: default;
-			}
-			#power_by_wrap {
-				height: 40px;
-			}
-			@media screen and (max-width: 700px) {
-				#orz_title {
-					height: 95px;
-				}
-				#orz_title span {
-					font-size: 80px;
-					line-height: 95px;
-				}
-				#orz_title span:hover {
-					font-size: 95px;
-				}
-				#aufun_icon {
-					width: 140px;
-					height: 140px;
-				}
-				#orz_content {
-					font-size: 42px;
-				}
-			}
-			@media screen and (max-width: 400px) {
-				#orz_title {
-					height: 60px;
-				}
-				#orz_title span {
-					font-size: 50px;
-					line-height: 60px;
-				}
-				#orz_title span:hover {
-					font-size: 60px;
-				}
-				#aufun_icon {
-					width: 100px;
-					height: 100px;
-				}
-				#orz {
-					padding-bottom: 150px;
-				}
-				#orz_content {
-					font-size: 32px;
-				}
-			}
-		</style>
-		<script>
-			var orz_cnt = 0
-			function start()
-			{
-				document.getElementById("start").style.display = "none"
-				document.getElementById("hide").style.display = "flex"
-				document.title="Aufun太神辣! | Dispwnl"
-			}
-			function orz()
-			{
-				orz_cnt++
-				alert("Aufun 太强辣!!! ×" + String(orz_cnt))
-				if (orz_cnt == 20) {
-					alert("Aufun: 嘤嘤嘤你们这群辣鸡拿不到AU就来diss我 \nvan了，您被Refun的3000后宫打死了")
-					document.write("<body style=\"background: black\"></body>")
-				}
-				if (orz_cnt == 15)
-					alert("Aufun: Fuck♂you man？！ \n恭喜你激起了大佬的愤怒, 您的RP已更新为: -INF")
-				if (orz_cnt > 7 && orz_cnt < 15)
-					alert("Aufun: 整天膜人, 是没有前途的")
-				if (orz_cnt == 3)
-					alert("Aufun: 很好, 给我膜到INF")
-			}
-			function orzorzorz()
-			{
-				document.title="人赢Aufun!! | Dispwnl"
-				var el = document.getElementById("orz_btn")
-				var el2 = document.getElementById("aufun_margin")
-				el2.style.display = "flex"
-				el.className = "orz_succ"
-				el.innerHTML = "膜拜成功!<br>Aufun又变强了!"
-				document.getElementById("aufun").className = "aufun"
-				el.scrollIntoView()
-				setTimeout(() => {
-					el.style.display = "none"
-					el2.style.height = "100vh"
-					el2.scrollIntoView()
-				}, 2000)
-			}
-			var sayings = ["Aufun: 辣鸡。", "Aufun: 我AK了IOI，你们行吗\n\n\n啧啧啧", "Aufun: 我妹子成群", "Aufun: 我为了让你膜连妹子都不泡了", "Aufun: 你看我成人赢了",
-				       "Aufun: 这种垃圾博客还敢膜我", "Aufun: 你蛇皮吧。。\n你有毒吧\n。。。", "我搞OI入门即巅峰了解一下",
-				       "Aufun: 我最NB了\n你们都是辣鸡\n你看看你们\n连个比赛都AK不了\n还学什么OI\n退群吧", "(AK了UOI后)\nAufun:让你见识一下什么是真正的欧皇",
-				       "AKfun: WoW! I get rank 2!\n\nI pass E2 with Balanced_Tree in Segment_Tree. But in fact using fenwick tree can pass E1 and E2, in this way\
-, the length of code can be reduced much."];
-			function maker_switch() {
-				var maker = document.getElementById("makers")
-				if (maker.className == '')
-					maker.className = 'maker_open'
-				else
-					maker.className = ''
-			}
-			document.title="Orz Aufun! | DieSheep"
-			function load() {
-				document.getElementById("loading_note").innerHTML = "正在联系Aufun..."
-				document.getElementById("loading_bar").style.width = '25vw'
-				document.getElementById("start").onclick = null
-				var img = new Image()
-				img.src = "aufun_top.png"
-				if (img.complate) {
-					load_1()
-					return
-				}
-				img.onload = load_1
-			}
-			function load_1() {
-				document.getElementById("loading_note").innerHTML = "正在召集吃(mo)瓜(bai)群众"
-				document.getElementById("loading_bar").style.width = '50vw'
-				var img = new Image()
-				img.src = "Orz.gif"
-				if (img.complate) {
-					load_2()
-					return
-				}
-				img.onload = load_2
-			}
-			function load_2() {
-				document.getElementById("loading_note").innerHTML = "Aufun来辣！迷妹们正在和他合影"
-				document.getElementById("loading_bar").style.width = '75vw'
-				var img = new Image()
-				img.src = "333.jpg"
-				if (img.complate) {
-					load_3()
-					return
-				}
-				img.onload = load_3
-			}
-			function load_3() {
-				document.getElementById("aufun_icon").style.backgroundImage = "url('aufun_top.png')"
-				document.getElementById("too_1").style.backgroundImage = "url('Orz.gif')"
-				document.getElementById("too_2").style.backgroundImage = "url('Orz.gif')"
-				document.getElementById("aufun").style.backgroundImage = "url('333.jpg')"
-				document.getElementById("loading_note").innerHTML = "点击免费膜Aufun"
-				document.getElementById("loading_bar").style.width = '100vw'
-				document.getElementById("start").onclick = start
-				document.getElementById("aufun_music").src = 'https://music.163.com/outchain/player?type=0&id=2275415823&auto=1&height=90'
-			}
-		</script>
-	</head>
-	<body>
-		<iframe id="aufun_music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110></iframe>
-		<div id="start" onclick="load()">
-			<div id="loading_note">我想膜Aufun！</div>
-			<div id="loading_bar"></div>
-		</div>
-		<div id="footer">
-			<span id="busuanzi_container_page_pv">
-				你是第<span id="busuanzi_value_page_pv"></span>个朝圣者！快膜Aufun来获得Au爷无穷RP的力量吧！
-			</span>
-		</div>
-		<div id="hide" style="display: none">
-			<p id="orz_title">
-				<span id="t_1" class="title_hide" style="color: rgb(66,133,244)">O</span>
-				<span id="t_2" class="title_hide" style="color: rgb(234,67,53)">r</span>
-				<span id="t_3" class="title_hide" style="color: rgb(251,188,5)">z</span>
-				<span id="t_4" class="title_hide" style="color: rgb(66,133,244)">A</span>
-				<span id="t_5" class="title_hide" style="color: rgb(52,168,83)">u</span>
-				<span id="t_6" class="title_hide" style="color: rgb(234,67,53)">fun</span>
-			</p>
-			<!--180px * 180px-->
-			<div id="aufun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
-			<div id="too_strong" onclick="orz()">
-				<div id="too_1"></div>
-				<div id="too_2"></div>
-			</div>
-			<p id="orz_content">Aufun是我们的红太阳，没有他我们会死！</p>
-			<div id="orz_btn" onclick="javascript:orzorzorz()">点击膜拜</div>
-			<div id="aufun_margin">
-				<div id="aufun" onclick="alert(sayings[Math.floor(Math.random()*sayings.length)])"></div>
-			</div>
-		</div>
-        	<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-		<div id="makers" title="制作者们" onclick="maker_switch()">
-			<div id="power_by_wrap">
-				<div id="arrow">
-					<svg width="32" height="32" version="1.1">
-						<path style="stroke: none; fill: #2D2D2D" d="M 8 14 L 20 2 A 3 3 0 0 1 24 6 L 14 16 L 24 26 A 3 3 0 0 1 20 30 L 8 18 A 3 3 0 0 1 8 14" />
-					</svg>
-				</div>
-				<div id="power_by">Powered by</div>
-			</div>
-			<div id="maker_0" title="提出想法、界面构思">范世琪(Cansult)</div>
-			<div id="maker_1" title="搞了点特效">wzhqwq</div>
-			<div id="maker_2" title="丰富了Aufun的语言，并冒死放到他的博客上">Dispwnl</div>
-		</div>
-	</body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+      margin: 0;
+      min-width: 320px;
+    }
+
+    .center {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+    }
+
+    .btn-lg {
+      width: 500px;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: rgb(231, 231, 231);
+      transition-property: background-color, color, box-shadow;
+      transition-duration: .3s;
+      overflow: hidden;
+    }
+    .btn-lg.loading {
+      cursor: progress;
+      background-color: rgb(210, 252, 212) !important;
+      box-shadow: none !important;
+      color: black !important;
+    }
+
+    #loading_note {
+      font-size: 30px;
+      line-height: 50px;
+      width: 100%;
+      margin-bottom: -50px;
+    }
+
+    #loading_bar {
+      height: 50px;
+      width: 0%;
+      background-color: rgb(98, 249, 144);
+      transition: width .5s ease-out;
+    }
+
+    .btn-lg:hover {
+      background-color: rgb(3, 150, 248);
+      box-shadow: 0 0 20px 0px rgba(3, 150, 248, 0.5);
+      color: #fff;
+    }
+
+    .loaded #loading_bar {
+      background-color: transparent;
+    }
+
+    #tip {
+      width: 380px;
+      margin-top: 20px;
+      border-radius: 10px;
+      height: 32px;
+      perspective: 300px;
+    }
+    #tip > div {
+      position: absolute;
+      background-color: #fff;
+      transform: rotateX(90deg);
+      animation: hide .5s;
+      line-height: 22px;
+      width: inherit;
+      padding: 5px;
+      border-radius: 10px;
+    }
+    #tip > .tip-show {
+      z-index: 100;
+      transform: rotateX(0deg);
+      animation-name: show;
+    }
+    @keyframes show {
+      0% {
+        z-index: 0;
+        transform: rotateX(-90deg);
+        background-color: #888;
+      }
+      49.99% {
+        z-index: 0;
+      }
+      50% {
+        z-index: 100;
+        transform: rotateX(-90deg);
+      }
+    }
+    @keyframes hide {
+      0% {
+        z-index: 100;
+        transform: rotateX(0deg);
+      }
+      49.99% {
+        z-index: 100;
+      }
+      50% {
+        z-index: 0;
+        transform: rotateX(90deg);
+        background-color: #888;
+      }
+    }
+
+    #hide {
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+
+    #orz_title {
+      font-size: 0;
+      height: 180px;
+      display: flex;
+      user-select: none;
+    }
+
+    #orz_title > div {
+      font-size: 128px;
+      line-height: 180px;
+      transition: font-size 0.1s;
+    }
+
+    #orz_title > div:hover {
+      font-size: 180px;
+    }
+
+    #aufun_icon {
+      z-index: 100;
+      background-size: 100%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      box-shadow: 0 0 100px red;
+      transition: box-shadow 0.5s;
+      cursor: pointer;
+    }
+
+    #aufun_icon:hover {
+      box-shadow: 0 0 200px 100px #f44;
+    }
+
+    #crowds {
+      width: 100%;
+      cursor: -webkit-zoom-in;
+      margin-top: -20px;
+    }
+
+    #crowds > div {
+      height: 45px;
+      width: 45%;
+      z-index: 0;
+      background-size: contain;
+    }
+
+    #crowds_l {
+      transform: scaleX(-1);
+      float: left;
+    }
+
+    #crowds_r {
+      float: right;
+    }
+
+    #orz_content {
+      color: red;
+      font-size: 56px;
+    }
+
+    #orz_btn {
+      cursor: pointer;
+      font-size: 30px;
+      line-height: 50px;
+      color: red;
+      background-color: rgb(235, 189, 189);
+      margin-bottom: 20px;
+    }
+
+    #orz_btn:hover {
+      background-color: rgb(255, 61, 61);
+      color: white;
+      box-shadow: 0 0 20px 0 rgba(255, 67, 67, 0.466);
+    }
+
+    .orz_succ {
+      background-color: rgb(0, 172, 23) !important;
+      color: #fff !important;
+      cursor: auto !important;
+      border-radius: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+    }
+
+    .orz_succ p {
+      line-height: 30px;
+    }
+
+    #aufun {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      opacity: 0;
+      height: 0;
+      width: 100%;
+      transition: height 1s, opacity 1s;
+      transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .aufun {
+      height: 100% !important;
+      opacity: 1 !important;
+      cursor: pointer;
+    }
+
+    #aufun_margin {
+      height: 100vh;
+      width: 100%;
+      display: none;
+    }
+
+    #makers {
+      position: fixed;
+      width: 140px;
+      height: 40px;
+      bottom: 10px;
+      right: 10px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 3px #0006;
+      transition-property: background-color, height;
+      transition-duration: .3s;
+      transition-timing-function: ease-out;
+      background-color: white;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    #makers:hover {
+      background-color: #DDD;
+    }
+
+    .maker_open {
+      height: 160px !important;
+      background-color: #fff !important;
+    }
+
+    .maker_open #arrow {
+      transform: scale(.6) rotate(270deg);
+    }
+
+    #arrow,
+    #powered_by {
+      text-align: left;
+      float: left;
+    }
+
+    #arrow {
+      margin: 4px;
+      width: 32px;
+      height: 32px;
+      transition: transform .3s;
+      transform: scale(.6) rotate(90deg);
+    }
+
+    #powered_by,
+    .maker {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .maker {
+      cursor: default;
+    }
+
+    #powered_by_wrap {
+      height: 40px;
+    }
+
+    @media screen and (max-width: 700px) {
+      .btn-lg {
+        width: 380px;
+      }
+      #loading_note {
+        font-size: 22px;
+      }
+      #orz_title {
+        height: 95px;
+      }
+      #tip {
+        font-size: 12px;
+      }
+
+      #orz_title > div {
+        font-size: 80px;
+        line-height: 95px;
+      }
+
+      #orz_title > div:hover {
+        font-size: 95px;
+      }
+
+      #aufun_icon {
+        width: 140px;
+        height: 140px;
+      }
+      #crowds > div {
+        height: 35px;
+      }
+
+      #orz_content {
+        font-size: 42px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .btn-lg {
+        width: 260px;
+      }
+      #loading_note {
+        font-size: 16px;
+        line-height: 40px;
+      }
+      #tip {
+        width: 300px;
+        height: 54px;
+      }
+      #orz_title {
+        height: 60px;
+      }
+
+      #orz_title > div {
+        font-size: 50px;
+        line-height: 60px;
+      }
+
+      #orz_title > div:hover {
+        font-size: 60px;
+      }
+
+      #aufun_icon {
+        width: 100px;
+        height: 100px;
+      }
+      #crowds {
+        margin-top: -5px;
+      }
+      #crowds > div {
+        height: 25px;
+      }
+
+      #orz {
+        padding-bottom: 150px;
+      }
+
+      #orz_content {
+        font-size: 32px;
+      }
+    }
+  </style>
+  <script>
+    function $(id) {
+      return document.getElementById(id);
+    }
+    window.onload = function () {
+      var orz_cnt = 0;
+      function start() {
+        $("start").style.display = "none";
+        $("hide").style.display = "flex";
+        document.title = "Aufun太神辣! | Dispwnl";
+        $("start").onclick = null;
+      }
+      $("crowds").onclick = function() {
+        orz_cnt++;
+        alert("Aufun 太强辣!!! ×" + String(orz_cnt));
+        if (orz_cnt == 20) {
+          alert("Aufun: 嘤嘤嘤你们这群辣鸡拿不到AU就来diss我 \nvan了，您被Refun的3000后宫打死了");
+          document.write("<body style=\"background: black\"></body>");
+        }
+        if (orz_cnt == 15)
+          alert("Aufun: Fuck♂you man？！ \n恭喜你激起了大佬的愤怒, 您的RP已更新为: -INF");
+        if (orz_cnt > 7 && orz_cnt < 15)
+          alert("Aufun: 整天膜人, 是没有前途的");
+        if (orz_cnt == 3)
+          alert("Aufun: 很好, 给我膜到INF");
+      }
+      $("orz_btn").onclick = function() {
+        document.title = "人赢Aufun!! | Dispwnl";
+        var el = $("orz_btn");
+        var el2 = $("aufun_margin");
+        el2.style.display = "block";
+        el.className = "orz_succ";
+        el.innerHTML = "膜拜成功!<br>Aufun又变强了!";
+        el2.scrollIntoView();
+        setTimeout(() => {
+          $("aufun").className = "aufun";
+          el.style.display = "none";
+        }, 800);
+      }
+      var sayings = ["Aufun: 辣鸡。", "Aufun: 我AK了IOI，你们行吗\n\n\n啧啧啧", "Aufun: 我妹子成群", "Aufun: 我为了让你膜连妹子都不泡了", "Aufun: 你看我成人赢了",
+        "Aufun: 这种垃圾博客还敢膜我", "Aufun: 你蛇皮吧。。\n你有毒吧\n。。。", "我搞OI入门即巅峰了解一下",
+        "Aufun: 我最NB了\n你们都是辣鸡\n你看看你们\n连个比赛都AK不了\n还学什么OI\n退群吧", "(AK了UOI后)\nAufun:让你见识一下什么是真正的欧皇",
+        "AKfun: WoW! I get rank 2!\n\nI pass E2 with Balanced_Tree in Segment_Tree. But in fact using fenwick tree can pass E1 and E2, in this way, the length of code can be reduced much."];
+      var say_cnt = 0;
+      $("aufun").onclick = function () {
+        if (say_cnt < 3)
+          alert(sayings[say_cnt]);
+        else
+          alert(sayings[Math.floor(Math.random()*sayings.length)]);
+        say_cnt++;
+      }
+      $("makers").onclick = function() {
+        var maker = $("makers");
+        if (maker.className == '')
+          maker.className = 'maker_open';
+        else
+          maker.className = '';
+      }
+      document.title = "Orz Aufun! | DieSheep";
+      var note_el = $("loading_note"), bar_el = $("loading_bar"), timer;
+      $("start").onclick = function() {
+        bar_el.style.width = '25%';
+        timer = setTimeout(() => {
+          $('tip1').className = '';
+          $('tip2').className = 'tip-show';
+        }, 1000);
+        note_el.innerHTML = "正在联系Aufun...";
+        $("start").onclick = null;
+        $("start").className = 'btn-lg loading';
+        var img = new Image();
+        img.onload = load_1;
+        img.src = "https://a-failure.github.io/portfolio/aufun_top.png";
+      }
+      function load_1() {
+        bar_el.style.width = '50%';
+        note_el.innerHTML = "正在召集吃(mo)瓜(bai)群众";
+        var img = new Image();
+        img.onload = load_2;
+        img.src = "https://a-failure.github.io/portfolio/Orz.gif";
+      }
+      function load_2() {
+        bar_el.style.width = '75%';
+        note_el.innerHTML = "Aufun来辣！迷妹们正在和他合影";
+        var img = new Image();
+        img.onload = load_3;
+        img.src = "https://a-failure.github.io/portfolio/333.jpg";
+      }
+      function load_3() {
+        bar_el.style.width = '100%';
+        clearTimeout(timer);
+        $("aufun_icon").style.backgroundImage = "url('https://a-failure.github.io/portfolio/aufun_top.png')";
+        $("crowds_l").style.backgroundImage = $("crowds_r").style.backgroundImage = "url('https://a-failure.github.io/portfolio/Orz.gif')";
+        $("aufun").style.backgroundImage = "url('https://a-failure.github.io/portfolio/333.jpg')"
+        note_el.innerHTML = "点击免费膜Aufun";
+        $("start").onclick = start;
+        $("start").className = 'btn-lg loaded';
+        $('tip1').className = $('tip2').className = '';
+        $('tip3').className = 'tip-show';
+        $("aufun_music").src = 'https://music.163.com/outchain/player?type=0&id=2275415823&auto=1&height=90'
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <iframe id="aufun_music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110></iframe>
+  <div class="center">
+    <div id="start" class="btn-lg">
+      <div id="loading_note">我想膜Aufun！</div>
+      <div id="loading_bar"></div>
+    </div>
+    <div id="tip">
+      <div id="tip1" class="tip-show">请务必在闲暇时间食用</div>
+      <div id="tip2">初次从GitHub上加载图片需要一段时间qwq</div>
+      <div id="tip3" style="transform-origin: 50% 16px;">
+        <span id="busuanzi_container_page_pv">你是第<span id="busuanzi_value_page_pv"></span>个朝圣者！快膜Aufun来获得Au爷无穷RP的力量吧！</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="hide">
+    <div id="orz_title">
+      <div style="color: rgb(66,133,244)">O</div>
+      <div style="color: rgb(234,67,53)">r</div>
+      <div style="color: rgb(251,188,5)">z</div>
+      <div style="color: rgb(66,133,244)">A</div>
+      <div style="color: rgb(52,168,83)">u</div>
+      <div style="color: rgb(234,67,53)">fun</div>
+    </div>
+
+    <div id="aufun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
+    <div id="crowds">
+      <div id="crowds_l"></div>
+      <div id="crowds_r"></div>
+    </div>
+    <p id="orz_content">Aufun是我们的红太阳，没有他我们会死！</p>
+    <div id="orz_btn" class="btn-lg">点击膜拜</div>
+    <div id="aufun_margin">
+      <div id="aufun"></div>
+    </div>
+  </div>
+
+  <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <div id="makers" title="制作者们">
+    <div id="powered_by_wrap">
+      <div id="arrow">
+        <svg width="32" height="32" version="1.1">
+          <path style="stroke: none; fill: #2D2D2D"
+            d="M 8 14 L 20 2 A 3 3 0 0 1 24 6 L 14 16 L 24 26 A 3 3 0 0 1 20 30 L 8 18 A 3 3 0 0 1 8 14" />
+        </svg>
+      </div>
+      <div id="powered_by">Powered by</div>
+    </div>
+    <div class="maker" title="提出想法、界面构思">Cansult</div>
+    <div class="maker" title="捣乱">wzhqwq</div>
+    <div class="maker" title="丰富了Aufun的语言，并冒死放到他的博客上">Dispwnl</div>
+  </div>
+</body>
+
 </html>
