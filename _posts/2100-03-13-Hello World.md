@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Hello World"
-date:       2100-03-13 21:14
+date:       2100-03-13
 author:     "Dispwnl"
 header-img: "img/used/13.jpg"
 catalog: false
